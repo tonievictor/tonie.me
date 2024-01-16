@@ -1,0 +1,49 @@
+:root {
+  --padding-x-lg: 12rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  color: #f8f9fa;
+  background-color: #000000;
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --padding-x-lg: 8rem;
+  }
+}
+@media screen and (max-width: 960px) {
+  :root {
+    --padding-x-lg: 4rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    --padding-x-lg: 1.5rem;
+  }
+}
