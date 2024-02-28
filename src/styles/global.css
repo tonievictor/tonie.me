@@ -48,8 +48,7 @@ p > a {
 section {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  margin-bottom: 2rem;
+  gap: 2rem;
 }
 
 .section__title {
