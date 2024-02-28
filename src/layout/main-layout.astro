@@ -1,6 +1,7 @@
 ---
 import './main-layout.css';
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 
 import { ViewTransitions } from 'astro:transitions';
 
@@ -54,7 +55,8 @@ let keywords = "tonie, victor, developer, software, engineer, nwanochi, chisom, 
 
 		<ViewTransitions />
 	</head>
-	<body>
+	<>
 		<slot />
+		<Footer />
 	</body>
 </html>

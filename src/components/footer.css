@@ -1,0 +1,32 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem var(--padding-x-lg) 1rem;
+  font-size: 0.9rem;
+}
+
+footer span {
+  opacity: 0.5;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: black;
+  background-color: #fca311;
+}
+
+@media screen and (max-width: 480px) {
+  footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2rem 1rem;
+    font-weight: 600;
+  }
+}
