@@ -67,8 +67,10 @@ section {
   height: 2.5rem;
   width: .2rem;
   background-color: #fca311;
-  
-  
+}
+
+section p, section time {
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 1024px) {
