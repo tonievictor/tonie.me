@@ -1,5 +1,5 @@
 header {
-  padding: 2rem var(--padding-x-lg);
+  padding: 2rem var(--padding-x-lg) 1rem;
 }
 
 .nav__container {
