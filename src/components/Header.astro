@@ -10,22 +10,24 @@ import "./header.css"
 	</div>
 
 	<div class="nav__menu hidden" id="nav_menu">
-		<a href="" class="nav_link">~/home</a>
-		<a href="" class="nav_link">~/tools</a>
-		<a href="" class="nav_link">~/projects</a>
-		<a href="/blog" target="_blank" class="nav_link">~/blog</a>
+		<a href="/" class="nav_link">~/home</a>
+		<a href="/#projects" class="nav_link">~/projects</a>
+		<a href="/blog" class="nav_link">~/blog</a>
 	</div>
 	</div>
 </header>
 
-<script>
-	const nav_btn = document.getElementById("nav_btn");
-	const nav_menu = document.getElementById("nav_menu");
-	const nav_icon = document.querySelector('Icon');
+<script is:inline>
+	document.addEventListener('astro:page-load', () => {
+		const nav_btn = document.getElementById("nav_btn");
+		const nav_menu = document.getElementById("nav_menu");
+		const nav_icon = document.querySelector('Icon');
 
 
-	nav_btn.addEventListener("click", () => {
-		nav_menu.classList.toggle("hidden");
-		nav_icon.setAttribute("name", "")
-	})
+		nav_btn.addEventListener("click", () => {
+			nav_menu.classList.toggle("hidden");
+			nav_icon.setAttribute("name", "")
+		})
+	});
+
 </script>

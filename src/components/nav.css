@@ -8,6 +8,7 @@ nav {
   top: 0;
   background-color: #000000;
   border-bottom: 1px solid #e5e5e520;
+  z-index: 1;
 }
 
 .logo__img {

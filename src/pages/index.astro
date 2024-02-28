@@ -1,7 +1,58 @@
 ---
-import MainLayout from "../layout/main-layout.astro"
+import MainLayout from "../layout/main-layout.astro";
+import "../styles/index.css";
+import Nav from "../components/Nav.astro";
+import Header from '../components/Header.astro';
 ---
 
-<MainLayout title="Home">
-	<h1>Holla</h1>
+<MainLayout title="Tonie" description="">
+  <Nav />
+	<Header />
+  <main>
+    <section class="intro_section">
+      <p>
+        Lorem ipsum dolor sit amet consectetu r <a href="">Hi</a> adipisicing elit.
+        Dignissimos vitae ducimus, iure maxime ea mollitia tenetur incidunt quam
+        illum suscipit, laudantium rem assumenda dolor minus esse! Iste voluptates
+        doloremque ea quam ipsam harum autem laudantium voluptate enim pariatur expedita
+        deserunt, perspiciatis consequuntur incidunt explicabo nemo porro obcaecati
+        minima ratione natus tempora aliquam? Laboriosam, iusto.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2 class="section__title">Projects</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+        aliquam ipsa tempore sed non! Et.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Officiis ajsb hbv shvs s vhvs shvss liquam ipsa
+        tempore sed non! Et
+      </p>
+
+      <div class="project_container">
+		<div class="project">
+			<div class="project_img">
+			  <img src="/images/projectsample.png" alt="" />
+			</div>
+			<h3>Go Dotenv</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,tempora!</p>
+		</div>
+		<div class="project">
+			<div class="project_img">
+			  <img src="/images/projectsample.png" alt="" />
+			</div>
+			<h3>Go Dotenv</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,tempora!</p>
+		</div>
+		<div class="project">
+			<div class="project_img">
+			  <img src="/images/projectsample.png" alt="" />
+			</div>
+			<h3>Go Dotenv</h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,tempora!</p>
+		</div>
+	  </div>
+			
+    </section>
+  </main>
 </MainLayout>

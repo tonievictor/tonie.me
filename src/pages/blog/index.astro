@@ -1,0 +1,35 @@
+---
+import MainLayout from "../../layout/main-layout.astro";
+import { getCollection } from 'astro:content';
+import FormattedDate from "../../components/FormattedDate.astro";
+import "../../styles/index.css";
+import "../../styles/blog.css";
+import Nav from "../../components/Nav.astro";
+import Header from '../../components/Header.astro';
+
+
+const posts = (await getCollection('articles')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+<MainLayout title="Blog" description="">
+	<Nav />
+	<Header />
+	<main>
+		<section>
+			<h2 class="section__title">Posts</h2>
+			<ul class="posts_container">
+				{posts.map((post) => (
+					<>
+						<li class="post">
+							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+							<p>{post.data.description}</p>
+							
+							<FormattedDate date={post.data.pubDate}/>
+						</li>
+					</>
+				))}
+			</ul>
+		</section>
+	</main>
+</MainLayout>

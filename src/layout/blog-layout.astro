@@ -1,0 +1,76 @@
+---
+import { type CollectionEntry } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import Nav from '../components/Nav.astro';
+import "../styles/global.css";
+import "./blog-layout.css";
+
+type Props = CollectionEntry<'articles'>['data'];
+import { ViewTransitions } from 'astro:transitions';
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const {title, heroImage, pubDate, tags, description} = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="en" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={tags} />
+		<meta name="author" content="Tonie Victor" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		<meta name="google" content="notranslate" />
+
+
+        <link rel="canonical" href={canonicalURL} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(heroImage, Astro.url)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(heroImage, Astro.url)} />
+
+		<meta property="og:site_name" content="Tonie" />
+		<meta property="og:site" content="Tonie" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(heroImage, Astro.url)} />
+		<meta property="og:url" content={Astro.url} />
+
+        <ViewTransitions />
+		<title>{title}</title>
+	</head>
+	<body>
+        <Nav/>
+        <main>
+            <a href="/blog" class="back">&#x2039; Back to blog</a>
+            <section>
+                <div class="top">
+                    <h1>{title}</h1>
+                    <FormattedDate date={pubDate}/>
+                    <p>{description}</p>
+                    <div class="top_image">
+                        <img src={heroImage} alt="">
+                    </div>
+                </div>
+            </section>
+        <slot/>
+        </main>
+	</body>
+</html>
+
+
