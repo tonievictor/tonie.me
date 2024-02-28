@@ -6,7 +6,6 @@ import "../styles/global.css";
 import "./blog-layout.css";
 
 type Props = CollectionEntry<'articles'>['data'];
-import { ViewTransitions } from 'astro:transitions';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
@@ -19,8 +18,9 @@ const {title, heroImage, pubDate, tags, description} = Astro.props
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="Content-Language" content="en" />
+		<link rel="icon" type="image/svg+xml" href="/public/favicon.ico">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content={Astro.generator} />
+    <meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<meta name="keywords" content={tags} />
 		<meta name="author" content="Tonie Victor" />
@@ -28,9 +28,9 @@ const {title, heroImage, pubDate, tags, description} = Astro.props
 		<meta name="googlebot" content="index, follow" />
 		<meta name="google" content="notranslate" />
 
+    <link rel="canonical" href={canonicalURL} />
 
-        <link rel="canonical" href={canonicalURL} />
-
+		<!-- OpenGraph/Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:title" content={title} />
@@ -44,16 +44,16 @@ const {title, heroImage, pubDate, tags, description} = Astro.props
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={new URL(heroImage, Astro.url)} />
 
+		<!-- OpenGraph/Facebook -->
 		<meta property="og:site_name" content="Tonie" />
 		<meta property="og:site" content="Tonie" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={new URL(heroImage, Astro.url)} />
 		<meta property="og:url" content={Astro.url} />
-
-        <ViewTransitions />
 		<title>{title}</title>
 	</head>
+
 	<body>
         <Nav/>
         <main>
@@ -63,9 +63,12 @@ const {title, heroImage, pubDate, tags, description} = Astro.props
                     <h1>{title}</h1>
                     <FormattedDate date={pubDate}/>
                     <p>{description}</p>
-                    <div class="top_image">
-                        <img src={heroImage} alt="">
-                    </div>
+									</div>
+										{
+											heroImage && (<div class="top_image">
+												<img src={heroImage} alt="" loading="lazy" />
+											</div>)
+										}
                 </div>
             </section>
         <slot/>

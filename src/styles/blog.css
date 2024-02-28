@@ -40,10 +40,20 @@
 }
 
 .blog pre {
-  background-color: #ffffff0d;
   padding: 1.25rem;
   font-size: 0.85rem;
   overflow-x: auto;
+}
+
+.blog pre code {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.blog p code,
+.blog blockquote p code {
+  color: rgb(226, 226, 226);
+  font-size: 0.88rem;
+  line-height: 1.9;
 }
 
 .blog blockquote {
@@ -54,8 +64,20 @@
   border-left: 2px solid #f19e1a;
 }
 
+.blog p code {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  line-height: 1.9;
+  margin: 0;
+  color: #f19e1a;
+  font-weight: 600;
+  background: scroll;
+  height: max-content;
+}
+
 .blog blockquote p {
-  padding: 1rem;
+  padding: 1.25rem;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   font-size: 0.88rem;
