@@ -3,6 +3,8 @@ import MainLayout from "../layout/main-layout.astro";
 import "../styles/index.css";
 import Nav from "../components/Nav.astro";
 import Header from '../components/Header.astro';
+import {ProjectsData} from "../data/projects";
+import { Icon } from "astro-icon/components";
 ---
 
 <MainLayout title="Tonie" description="Tonie - Software Developer">
@@ -25,27 +27,21 @@ import Header from '../components/Header.astro';
       </p>
 
       <div class="project_container">
-		<div class="project">
-			<div class="project_img">
-			  <img src="/images/projectsample.png" alt="" loading="lazy" />
-			</div>
-			<h3>Go Dotenv</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,tempora!</p>
-		</div>
-		<div class="project">
-			<div class="project_img">
-			  <img src="/images/projectsample.png" alt="" loading="lazy" />
-			</div>
-			<h3>Go Dotenv</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,tempora!</p>
-		</div>
-		<div class="project">
-			<div class="project_img">
-			  <img src="/images/projectsample.png" alt="" loading="lazy" />
-			</div>
-			<h3>Go Dotenv</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea,tempora!</p>
-		</div>
+				{ProjectsData.map((project) => (
+					<div class="project" >
+						<div class="project_img">
+							<img src={project.image} alt={project.imagealt} loading="lazy" />
+						</div>
+						<h3>{project.title}</h3>
+						<p>{project.overview}</p>
+						<div class="project_links">
+							{project.githublink && <a href={project.githublink} target="_blank" class="project_link"><Icon name="mdi:github"/></a>}
+							{project.websitelink && <a href={project.websitelink} target="_blank" class="project_link"><Icon name="mdi:ios-share"/></a>}
+						</div>
+					</div>
+				))}
+
+
 	  </div>
 
     </section>
