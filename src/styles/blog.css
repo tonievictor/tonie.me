@@ -33,8 +33,9 @@
 }
 
 .blog a {
-  color: white;
+  color: #f19e1a;
 }
+
 .blog a:hover {
   text-decoration: underline;
 }
@@ -47,13 +48,6 @@
 
 .blog pre code {
   font-family: "Courier New", Courier, monospace;
-}
-
-.blog p code,
-.blog blockquote p code {
-  color: rgb(226, 226, 226);
-  font-size: 0.88rem;
-  line-height: 1.9;
 }
 
 .blog blockquote {
