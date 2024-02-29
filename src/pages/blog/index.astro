@@ -12,7 +12,7 @@ const posts = (await getCollection('articles')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
-<MainLayout title="Blog" description="">
+<MainLayout title="Blog" description="Tonie - Software Developer">
 	<Nav />
 	<Header />
 	<main>
@@ -24,7 +24,7 @@ const posts = (await getCollection('articles')).sort(
 						<li class="post">
 							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
 							<p>{post.data.description}</p>
-							
+
 							<FormattedDate date={post.data.pubDate}/>
 						</li>
 					</>
