@@ -23,8 +23,9 @@ body {
   color: #f8f9fa;
   font-optical-sizing: auto;
   background-color: #000000;
-  font-family: "Inter", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   line-height: 1.9;
+  font-size: 18px;
 }
 
 ul {

@@ -2,6 +2,7 @@
 title: "Third post"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 08 2029"
+heroImage: "/public/images/projectsample.png"
 tags: "hshs haha ahaa ah h h ahhha hhha hhha hhah haaha"
 ---
 

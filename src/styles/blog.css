@@ -27,9 +27,10 @@
 }
 
 .blog p {
-  opacity: 0.8;
+  opacity: 0.85;
   margin: 1rem 0;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
+  line-height: 150%;
 }
 
 .blog a {
@@ -42,12 +43,14 @@
 
 .blog pre {
   padding: 1.25rem;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   overflow-x: auto;
+  border-radius: 0.5rem;
 }
 
 .blog pre code {
   font-family: "Courier New", Courier, monospace;
+  border-radius: 0.5rem;
 }
 
 .blog blockquote {
@@ -74,12 +77,13 @@
   padding: 1.25rem;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 0.88rem;
+  font-size: 1rem;
   line-height: 1.9;
   margin: 0;
   color: #f19e1a;
   font-weight: 600;
   background: scroll;
   background-color: rgba(241, 158, 26, 0.1);
+  border-radius: 0.5rem;
   height: max-content;
 }
