@@ -84,6 +84,9 @@ section time {
   }
 }
 @media screen and (max-width: 480px) {
+  body {
+    font-size: 17px;
+  }
   :root {
     --padding-x-lg: 1.5rem;
   }
