@@ -8,9 +8,9 @@ import Nav from "../../components/Nav.astro";
 import Header from '../../components/Header.astro';
 
 
-const posts = (await getCollection('articles')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+const posts = (await getCollection('articles')).filter((post) => {
+	post.data.draft == false
+}).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 <MainLayout title="Blog" description="Tonie - Software Developer">
 	<Nav />
