@@ -26,7 +26,6 @@ export const ProjectsData: ProjectsDataType[] = [
       "lsnjsbs s hsvh shbvsjs hbshs  hsh jbsji iajm n sjbisnjbnsu ubnjs jbib biu busi i",
     githublink: "ksnkns",
     image: "/images/projectsample.png",
-
     imagealt: "",
   },
   {
@@ -38,34 +37,5 @@ export const ProjectsData: ProjectsDataType[] = [
     image: "/images/projectsample.png",
     websitelink: "jsbs",
     imagealt: " jsnsjs",
-  },
-  {
-    id: 3,
-    title: "Go dotenv",
-    overview:
-      "lsnjsbs s hsvh shbvsjs hbshs  hsh jbsji iajm n sjbisnjbnsu ubnjs jbib biu busi i",
-    githublink: "sknsjksn",
-    image: "/images/projectsample.png",
-    imagealt: "",
-  },
-  {
-    id: 4,
-    title: "Go dotenv",
-    overview:
-      "lsnjsbs s hsvh shbvsjs hbshs  hsh jbsji iajm n sjbisnjbnsu ubnjs jbib biu busi i",
-    githublink: "",
-    image: "/images/projectsample.png",
-    websitelink: "jsnsj",
-    imagealt: "",
-  },
-  {
-    id: 5,
-    title: "Go dotenv",
-    overview:
-      "lsnjsbs s hsvh shbvsjs hbshs  hsh jbsji iajm n sjbisnjbnsu ubnjs jbib biu busi i",
-    githublink: "ksnsk",
-    image: "/images/projectsample.png",
-    websitelink: "jsnjs",
-    imagealt: "",
   },
 ];
