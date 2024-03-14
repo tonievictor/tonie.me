@@ -61,15 +61,15 @@ h5 {
 
 .blog pre code {
   border-radius: 0.5rem;
-  /* all: unset; */
+  all: unset;
 }
 
 .blog blockquote {
-  margin: 4px 0;
-  border-left: 2px;
   font-style: italic;
   display: flex;
   border-left: 2px solid #f19e1a;
+  padding: 1rem;
+  flex-direction: column;
 }
 
 .blog p code {
