@@ -4,9 +4,7 @@ import BlogLayout from "../../layout/blog-layout.astro";
 import "../../styles/blog.css"
 
 export async function getStaticPaths() {
-    const posts = (await getCollection('articles')).filter((post) => {
-	post.data.draft == false
-});
+    const posts = (await getCollection('articles'))
     return posts.map((post) => ({
         params: { slug: post.slug },
         props: post,

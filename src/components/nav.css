@@ -6,7 +6,7 @@ nav {
   padding: 1rem var(--padding-x-lg) 0.6rem;
   position: sticky;
   top: 0;
-  background-color: #000000;
+  background-color: #1a1a1a;
   border-bottom: 1px solid #e5e5e520;
   z-index: 1;
 }
