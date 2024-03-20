@@ -7,7 +7,6 @@
 .post {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
 }
 
 .post a {
@@ -68,7 +67,7 @@ h5 {
   font-style: italic;
   display: flex;
   border-left: 2px solid #f19e1a;
-  padding: 1rem;
+  padding: 0.5rem;
   flex-direction: column;
 }
 

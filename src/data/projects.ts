@@ -22,18 +22,16 @@ export const ProjectsData: ProjectsDataType[] = [
     id: 1,
     title: "Go dotenv",
     overview: "A dotenv package for go projects.",
-    githublink: "ksnkns",
-    image: "/images/projectsample.png",
-    imagealt: "",
+    githublink: "https://github.com/tonie-ng/go-dotenv",
+    image: "/images/go-dotenv.png",
+    imagealt: "A code snippet showcasing the use of the dotenv package",
   },
   {
     id: 2,
-    title: "Go dotenv",
-    overview:
-      "lsnjsbs s hsvh shbvsjs hbshs  hsh jbsji iajm n sjbisnjbnsu ubnjs jbib biu busi i",
-
-    image: "/images/projectsample.png",
-    websitelink: "jsbs",
-    imagealt: " jsnsjs",
+    title: "Socket GC",
+    overview: "A terminal based gorupchat",
+    image: "/images/socket-gc.png",
+    githublink: "https://github.com/tonie-ng/socket-gc",
+    imagealt: " A picture of 4 terminal emulators having a chat",
   },
 ];
