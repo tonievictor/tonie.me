@@ -87,6 +87,9 @@ section {
 
 .section__title::before {
   content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 2.5rem;
   width: 0.2rem;
   background-color: #fca311;
@@ -117,11 +120,12 @@ section time {
 
   .section__title {
     font-size: 1.8rem;
-    gap: 0.3rem;
-    font-weight: 800;
-    display: flex;
-    align-items: center;
-    opacity: 0.9;
+  }
+  .section__title::before {
+    content: "";
+    height: 2rem;
+    width: 0.2rem;
+    background-color: #fca311;
   }
 
   p {

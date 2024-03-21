@@ -12,11 +12,10 @@ export const ProjectsData: ProjectsDataType[] = [
   {
     id: 0,
     title: "Simple shell",
-    overview: "An implementation of the UNIX shell in C.",
+    overview: "An implementation of the UNIX shell program.",
     githublink: "https://github.com/tonie-ng/simple_shell",
     image: "/images/simpleshell.png",
-    imagealt: "A cover photo for the simple shell project",
-    websitelink: "",
+    imagealt: "A cover photo for the simple shell project.",
   },
   {
     id: 1,
@@ -29,9 +28,9 @@ export const ProjectsData: ProjectsDataType[] = [
   {
     id: 2,
     title: "Socket GC",
-    overview: "A terminal based gorupchat",
+    overview: "A terminal based groupchat application.",
     image: "/images/socket-gc.png",
     githublink: "https://github.com/tonie-ng/socket-gc",
-    imagealt: " A picture of 4 terminal emulators having a chat",
+    imagealt: " A picture of 4 terminal emulators having a chat.",
   },
 ];
