@@ -1,22 +1,33 @@
 #!/usr/bin/env bash
 
-if [[ $# -ne 2 ]]; then
+if [[ $# -ne 1 ]]; then
 	echo "Usage: $0 <filename>"
 	exit
 fi
 
+
 file="./src/content/articles/$1.md"
+
+check_file_ext() {
+	count=$(echo "he.md" | awk '{split($0, arr, ".")}')
+	echo $count
+	ext="${1##*.}"
+	echo $ext
+}
 
 create_file() {
 	touch $file
 	echo "---" > $file
 	echo "title:" >> $file
 	echo "description:" >> $file
-	echo "pubDate:" >> $file
-	echo "draft:" >> $file
+	echo "pubDate: 01 January 2000" >> $file
+	echo "tags": >> $file
+	echo "draft: false" >> $file
+	echo "heroImage": >> $file
 	echo "---" >> $file
 }
 
+check_file_ext $1
 if [[ -e $file ]]; then
 	echo "File already exists!"
 else

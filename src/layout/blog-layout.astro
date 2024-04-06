@@ -9,7 +9,7 @@ import SeoHead from "./seo-head.astro";
 
 type Props = CollectionEntry<'articles'>['data'];
 
-const {title, heroImage, pubDate, tags, description} = Astro.props as Props;
+const {title, heroImage, pubDate, tags, description, heroImageAlt} = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -34,13 +34,12 @@ const {title, heroImage, pubDate, tags, description} = Astro.props as Props;
 									</div>
 										{
 											heroImage && (<div class="top_image">
-												<img src={heroImage} alt="" loading="lazy" />
+												<img src={heroImage} alt={heroImageAlt} loading="lazy"/>
 											</div>)
 										}
                 </div>
             </section>
         <slot/>
-
         </main>
 				<Footer />
 	</body>

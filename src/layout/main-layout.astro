@@ -1,23 +1,26 @@
 ---
-import './main-layout.css';
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import SeoHead from "./seo-head.astro";
-
 import { ViewTransitions } from 'astro:transitions';
 
-
-const { title, description, image = "/images/profile.jpeg"} =  Astro.props;
-let keywords = "tonie, victor, developer, software, engineer, nwanochi, chisom, python, c, typescript, golang, nodejs, gleam";
-
+type Props = {
+	title: string,
+	description: string,
+	image? : string,
+	tags? : string
+}
+let { title, description, image, tags} =  Astro.props as Props;
+if (!image) image = "/images/profile.jpeg";
+if (!tags) tags = "tonie, victor, developer, software, engineer, nwanochi, chisom, python, c, typescript, golang, nodejs, gleam";
 ---
 
 <html lang="en">
 	<head>
-		<SeoHead title={title} description={description} image={image} keywords={keywords}/>
+		<SeoHead title={title} description={description} image={image} keywords={tags}/>
 		<ViewTransitions />
 	</head>
-	<>
+	<body>
 		<slot />
 		<Footer />
 	</body>

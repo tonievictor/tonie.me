@@ -1,10 +1,10 @@
 ---
+import { Icon } from "astro-icon/components";
 import MainLayout from "../layout/main-layout.astro";
 import "../styles/index.css";
 import Nav from "../components/Nav.astro";
 import Header from '../components/Header.astro';
 import { ProjectsData } from "../data/projects";
-import { Icon } from "astro-icon/components";
 ---
 
 <MainLayout title="Tonie" description="Tonie - Software Developer">
@@ -12,9 +12,22 @@ import { Icon } from "astro-icon/components";
 	<Header />
   <main>
     <section class="intro_section">
-      <p>
-        Hi! My name is <b>Tonie Victor</b> I'm a software engineer with a primary interest in infrastructure, networking and backend systems. Outside of tinkering with software, I play football, listen to music, play games and read books. Outside of tinkering with software, I play football, listen to music, play games and read books.<br><br> Outside of tinkering with software, I play football, listen to music, play games and read books Outside of tinkering with software, I play football, listen to music, play games and read books. Outside of tinkering with software, I play football, listen to music, play games and read books. Outside of tinkering with software, I play football, listen to music, play games and read books. <a href="https://cal.com/tonie-ng/say-hello" target="_blank"> Say Hello!</a>
-      </p>
+			<!-- Todo -->
+			<p>
+				Hi! My name is <b>Tonie Victor</b>. I'm a sofwtare developer with a primary interest in infrastructure, networking and system level software. 
+				Hi! My name is <b>Tonie Victor</b>. I'm a sofwtare developer with a primary interest in infrastructure,
+				<br>
+				<br>
+				networking and system level software. 
+				Hi! My name is <b>Tonie Victor</b>. I'm a sofwtare developer with a primary interest in 
+				infrastructure, networking and system level software. 
+				Hi! My name is <b>Tonie Victor</b>. I'm a sofwtare developer with a primary interest in infrastructure, networking and system level software.
+				<br>
+				<br>
+				Hi! My name is <b>Tonie Victor</b>. I'm a sofwtare developer with a primary interest in infrastructure, networking and 
+				system level software. 
+				Hi! My name is <b>Tonie Victor</b>. I'm a sofwtare developer with a primary interest in infrastructure,
+			</p>
     </section>
 
     <section id="projects">
@@ -26,15 +39,11 @@ import { Icon } from "astro-icon/components";
       <div class="project_container">
 				{ProjectsData.map((project) => (
 					<div class="project" >
-						<div class="project_img">
-							<img src={project.image} alt={project.imagealt} loading="lazy" />
-						</div>
-						<h3>{project.title}</h3>
-						<p>{project.overview}</p>
-						<div class="project_links">
-							{project.githublink && <a href={project.githublink} target="_blank" class="project_link"><Icon name="mdi:github"/></a>}
-							{project.websitelink && <a href={project.websitelink} target="_blank" class="project_link"><Icon name="mdi:ios-share"/></a>}
-						</div>
+							<a target="_blank" href={project.link} class="project_title">{project.title} <Icon name="mdi:arrow-top-right-thin"/></a>
+							<p>{project.overview}</p>
+							<div class="project_tags">
+								{project.tags.map((tag) => <span>{tag}</span>)}
+							</div>
 					</div>
 				))}
 	  </div>

@@ -8,4 +8,7 @@ import icon from "astro-icon";
 export default defineConfig({
   site: "https://tonie.me/",
   integrations: [icon(), mdx(), sitemap()],
+	redirects: {
+		"/live": "https://twitch.tv/tonievictor",
+	},
 });

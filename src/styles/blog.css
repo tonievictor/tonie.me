@@ -31,6 +31,7 @@ h3,
 h4,
 h5 {
   opacity: 0.8;
+	width: max-content;
   line-height: 34px;
 }
 
