@@ -69,6 +69,7 @@ h5 {
   border-left: 2px solid #f19e1a;
   padding: 0.5rem;
   flex-direction: column;
+  opacity: 0.9;
 }
 
 .blog p code {
