@@ -11,23 +11,18 @@ import "./header.css"
 
 	<div class="nav__menu hidden" id="nav_menu">
 		<a href="/" class="nav_link">~/home</a>
-		<a href="/#projects" class="nav_link">~/projects</a>
 		<a href="/blog" class="nav_link">~/blog</a>
+		<a href="https://www.twitch.tv/tonievictor" target="_blank" class="nav_link">~/live</a>
 	</div>
 	</div>
 </header>
 
-<script is:inline>
-	document.addEventListener('astro:page-load', () => {
-		const nav_btn = document.getElementById("nav_btn");
-		const nav_menu = document.getElementById("nav_menu");
-		const nav_icon = document.querySelector('Icon');
+<script>
+	const nav_btn = document.getElementById("nav_btn");
+	const nav_menu = document.getElementById("nav_menu");
 
-
-		nav_btn.addEventListener("click", () => {
-			nav_menu.classList.toggle("hidden");
-			nav_icon.setAttribute("name", "")
-		})
-	});
+	nav_btn.addEventListener("click", () => {
+		nav_menu.classList.toggle("hidden");
+	})
 
 </script>

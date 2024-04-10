@@ -2,28 +2,26 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import SeoHead from "./seo-head.astro";
-import { ViewTransitions } from 'astro:transitions';
 
 type Props = {
 	title: string,
 	description: string,
 	image? : string,
 	tags? : string,
-	showfooter?: boolean
+	showfooter?: string,
 }
 let { title, description, image, tags, showfooter} =  Astro.props as Props;
 if (!image) image = "/images/profile.jpeg";
-if (!showfooter) showfooter = true;
+if (!showfooter) showfooter = "true";
 if (!tags) tags = "tonie, victor, developer, software, engineer, nwanochi, chisom, python, c, typescript, golang, nodejs, gleam";
 ---
 
 <html lang="en">
 	<head>
 		<SeoHead title={title} description={description} image={image} keywords={tags}/>
-		<ViewTransitions />
 	</head>
 	<body>
 		<slot />
-		{showfooter && <Footer />}
+		{showfooter == "true" && <Footer />}
 	</body>
 </html>

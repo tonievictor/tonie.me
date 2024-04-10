@@ -2,7 +2,6 @@
 import MainLayout from "../layout/main-layout.astro"
 import Nav from "../components/Nav.astro"
 import Back from "../components/Back.astro"
-import "../styles/global.css"
 ---
 
 <MainLayout title="404" description="Page not found" >
@@ -27,11 +26,17 @@ import "../styles/global.css"
 
 	.notfound h1 {
 		font-size: 128px;
+		font-weight: 900;
+		line-height: 198px;
 		color: white
 	}
 
+	.notfound p {
+		opacity: 0.7;
+	}
+
 	main {
-		height: calc(95vh - 10rem);
+		height: calc(98vh - 10rem);
 		padding: 2rem var(--padding-x-lg);
 		display: flex;
 		flex-direction: column;

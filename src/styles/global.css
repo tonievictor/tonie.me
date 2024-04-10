@@ -41,7 +41,9 @@ body {
   font-size: 18px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-	transition: ease 200ms all;
+	transition-property: all;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
 }
 
 h1,
