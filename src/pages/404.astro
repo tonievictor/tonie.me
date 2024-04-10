@@ -4,7 +4,7 @@ import Nav from "../components/Nav.astro"
 import Back from "../components/Back.astro"
 ---
 
-<MainLayout title="404" description="Page not found" >
+<MainLayout title="404" description="Page not found" showfooter="false">
   <Nav />
 	<main>
 		<Back text="Back" url="/"></Back>
@@ -25,7 +25,7 @@ import Back from "../components/Back.astro"
 	}
 
 	.notfound h1 {
-		/* font-size: 128px; */
+		font-size: 6rem;
 		font-weight: 900;
 		/* line-height: 198px; */
 		color: white
