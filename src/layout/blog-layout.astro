@@ -6,6 +6,7 @@ import "../styles/global.css";
 import "./blog-layout.css";
 import Footer from "../components/Footer.astro";
 import SeoHead from "./seo-head.astro";
+import Back from "../components/Back.astro";
 
 type Props = CollectionEntry<'articles'>['data'];
 
@@ -25,7 +26,7 @@ const {title, heroImage, pubDate, tags, description, heroImageAlt} = Astro.props
 	<body>
         <Nav/>
         <main>
-            <a href="/blog" class="back">&#x2039; Back to blog</a>
+						<Back text="Back to blog" url="/blog"></Back>
             <section>
                 <div class="top">
                     <h1>{title}</h1>

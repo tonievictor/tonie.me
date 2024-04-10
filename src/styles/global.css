@@ -41,6 +41,7 @@ body {
   font-size: 18px;
   word-wrap: break-word;
   overflow-wrap: break-word;
+	transition: ease 200ms all;
 }
 
 h1,

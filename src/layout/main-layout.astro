@@ -8,10 +8,12 @@ type Props = {
 	title: string,
 	description: string,
 	image? : string,
-	tags? : string
+	tags? : string,
+	showfooter?: boolean
 }
-let { title, description, image, tags} =  Astro.props as Props;
+let { title, description, image, tags, showfooter} =  Astro.props as Props;
 if (!image) image = "/images/profile.jpeg";
+if (!showfooter) showfooter = true;
 if (!tags) tags = "tonie, victor, developer, software, engineer, nwanochi, chisom, python, c, typescript, golang, nodejs, gleam";
 ---
 
@@ -22,6 +24,6 @@ if (!tags) tags = "tonie, victor, developer, software, engineer, nwanochi, chiso
 	</head>
 	<body>
 		<slot />
-		<Footer />
+		{showfooter && <Footer />}
 	</body>
 </html>

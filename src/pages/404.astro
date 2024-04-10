@@ -1,0 +1,40 @@
+---
+import MainLayout from "../layout/main-layout.astro"
+import Nav from "../components/Nav.astro"
+import Back from "../components/Back.astro"
+import "../styles/global.css"
+---
+
+<MainLayout title="404" description="Page not found" >
+  <Nav />
+	<main>
+		<Back text="Back" url="/"></Back>
+		<div class="notfound">
+			<h1>404</h1>
+			<p>uhm... this page doesn't exist</p>
+		</div>
+	</main>
+</MainLayout>
+
+<style>
+	.notfound {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.notfound h1 {
+		font-size: 128px;
+		color: white
+	}
+
+	main {
+		height: calc(95vh - 10rem);
+		padding: 2rem var(--padding-x-lg);
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+</style>
