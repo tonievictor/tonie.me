@@ -30,8 +30,8 @@ const {title, heroImage, pubDate, tags, description, heroImageAlt} = Astro.props
             <section>
                 <div class="top">
                     <h1>{title}</h1>
-                    <FormattedDate date={pubDate}/>
                     <p>{description}</p>
+                    <FormattedDate date={pubDate}/>
 									</div>
 										{
 											heroImage && (<div class="top_image">
