@@ -10,7 +10,9 @@ import Back from "../components/Back.astro";
 
 type Props = CollectionEntry<'articles'>['data'];
 
-const {title, heroImage, pubDate, tags, description, heroImageAlt} = Astro.props as Props;
+let {title, heroImage, pubDate, tags, description, heroImageAlt} = Astro.props as Props;
+if (!heroImage) heroImage = "/images/profile.jpeg";
+if (!heroImageAlt) heroImageAlt = "";
 ---
 
 <!DOCTYPE html>
