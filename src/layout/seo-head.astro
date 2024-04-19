@@ -1,5 +1,6 @@
 ---
 let { title, description, keywords, image } = Astro.props;
+if (!image) image = "/images/profile.jpeg";
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
