@@ -11,7 +11,6 @@ type Props = {
 	showfooter?: string,
 }
 let { title, description, image, tags, showfooter} =  Astro.props as Props;
-if (!image) image = "/images/profile.jpeg";
 if (!showfooter) showfooter = "true";
 if (!tags) tags = "tonie, victor, developer, software, engineer, nwanochi, chisom, python, c, typescript, golang, nodejs, gleam";
 ---
