@@ -26,7 +26,7 @@ h3,
 h4,
 h5 {
 	width: max-content;
-  line-height: 34px;
+  line-height: 2.125rem;
 }
 
 .post p,
@@ -36,7 +36,7 @@ h5 {
 
 .blog p {
   margin: 1rem 0;
-  /* line-height: 34px; */
+  /* line-height: 2.125rem; */
 }
 
 .blog a {

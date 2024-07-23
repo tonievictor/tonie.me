@@ -39,7 +39,7 @@ body {
 	font-optical-sizing: auto;
 	font-family: "Atkinson", sans-serif;
 	background-color: #1a1a1a;
-	line-height: 34px;
+	line-height: 2.125rem;
 	font-size: 18px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -67,8 +67,7 @@ a {
 }
 
 p {
-	line-height: 34px;
-	/* color: rgb(226, 226, 226); */
+	line-height: 2.125rem;
 }
 
 p>a {
