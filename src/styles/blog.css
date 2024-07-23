@@ -17,12 +17,7 @@
 }
 
 .post a:hover {
-  color: #f19e1a;
-}
-
-.post p,
-.post time {
-  opacity: 0.8;
+  color: var(--highlight-color);
 }
 
 .blog h1,
@@ -30,20 +25,22 @@ h2,
 h3,
 h4,
 h5 {
-  opacity: 0.8;
 	width: max-content;
   line-height: 34px;
 }
 
+.post p,
+.post time {
+  opacity: 0.8;
+}
+
 .blog p {
-  opacity: 0.85;
   margin: 1rem 0;
-  font-size: 1.1rem;
-  line-height: 34px;
+  /* line-height: 34px; */
 }
 
 .blog a {
-  color: #f19e1a;
+  color: var(--highlight-color);
 }
 
 .blog a:hover {
@@ -66,7 +63,7 @@ h5 {
 .blog blockquote {
   font-style: italic;
   display: flex;
-  border-left: 2px solid #f19e1a;
+  border-left: 2px solid var(--highlight-color);
   padding: 0 0.5rem;
   flex-direction: column;
   opacity: 0.9;
@@ -78,7 +75,7 @@ h5 {
   font-size: 1rem;
   line-height: 1.9;
   margin: 0;
-  color: #f19e1a;
+  color: var(--highlight-color);
   font-weight: 600;
   background: scroll;
   height: max-content;

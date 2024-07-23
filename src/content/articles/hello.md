@@ -1,5 +1,5 @@
 ---
-title: "Hello"
+title: "Hello World!"
 description: "An introduction."
 pubDate: "19 April 2024"
 tags: "hello, world, blog, welcome, software"
