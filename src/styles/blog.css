@@ -36,15 +36,6 @@ h5 {
 
 .blog p {
   margin: 1rem 0;
-  /* line-height: 2.125rem; */
-}
-
-.blog a {
-  color: var(--highlight-color);
-}
-
-.blog a:hover {
-  text-decoration: underline;
 }
 
 .blog pre {
@@ -58,6 +49,7 @@ h5 {
 .blog pre code {
   border-radius: 0.5rem;
   all: unset;
+	font-family: monospace;
 }
 
 .blog blockquote {
@@ -66,19 +58,17 @@ h5 {
   border-left: 2px solid var(--highlight-color);
   padding: 0 0.5rem;
   flex-direction: column;
-  opacity: 0.9;
 }
 
 .blog p code {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
+  all: unset;
   font-size: 1rem;
-  line-height: 1.9;
-  margin: 0;
-  color: var(--highlight-color);
-  font-weight: 600;
-  background: scroll;
-  height: max-content;
+	font-family: monospace;
+	font-size: 0.8rem;
+  font-weight: 500;
+	background-color: #2d2d2d;
+	border-radius: .2rem;
+	padding: 0.2rem
 }
 
 .blog img {
