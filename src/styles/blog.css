@@ -1,66 +1,101 @@
 .posts_container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 }
 
 .post {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .post a {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: white;
-  transition: all 100ms ease;
+	font-size: 1.4rem;
+	font-weight: 600;
+	color: white;
+	transition: all 100ms ease;
+}
+
+.post p {
+	font-size: 17px;
 }
 
 .post a:hover {
-  color: var(--highlight-color);
+	color: var(--highlight-color);
 }
 
 .blog h1,
-h2,
-h3,
-h4,
-h5 {
+.blog h2,
+.blog h3,
+.blog h4,
+.blog h5 {
 	width: max-content;
-  line-height: 2.125rem;
+	line-height: 1.75rem;
+}
+
+
+.blog ul,
+.blog ol {
+	list-style-position: inside;
+	padding-left: 1rem;
+}
+
+/* For some reason this is the style used for ul that contain checkboxes */
+.contains-task-list {
+	list-style: none;
 }
 
 .post p,
 .post time {
-  opacity: 0.8;
+	opacity: 0.8;
 }
 
-.blog p {
-  margin: 1rem 0;
+.blog p,
+.blog h1,
+.blog h2,
+.blog h3,
+.blog h4,
+.blog h5,
+.blog h6,
+.blog pre,
+.blog ul,
+.blog ol,
+.blog img,
+.blog blockquote {
+	margin-bottom: 0.75rem;
+}
+
+.blog h1 {
+	font-size: 27px;
+}
+
+.blog h2 {
+	font-size: 24px;
 }
 
 .blog pre {
-  padding: 1.25rem;
-  font-size: 0.9rem;
-  overflow-x: auto;
-  border-radius: 0.5rem;
-  width: 100%;
+	padding: 1.25rem;
+	font-size: 0.9rem;
+	overflow-x: auto;
+	border-radius: 0.5rem;
+	width: 100%;
 }
 
 .blog pre code {
-  border-radius: 0.5rem;
-  all: unset;
+	border-radius: 0.5rem;
+	all: unset;
 }
 
 .blog blockquote {
-  font-style: italic;
-  display: flex;
-  border-left: 2px solid var(--highlight-color);
-  padding: 0 0.5rem;
-  flex-direction: column;
+	font-style: italic;
+	display: flex;
+	border-left: 2px solid var(--highlight-color);
+	padding: 0 0.5rem;
+	flex-direction: column;
 }
 
 .blog p code {
-  all: unset;
+	all: unset;
 	background-color: #2d2d2d;
 	font-size: 0.984rem;
 	border-radius: .2rem;
@@ -68,35 +103,32 @@ h5 {
 }
 
 .blog img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-}
-
-@media screen and (max-width: 1024px) {
-  .blog img {
-    width: 100%;
-    height: 25rem;
-  }
+	width: 100%;
+	height: 25rem;
+	object-fit: contain;
+	border-radius: 0.5rem;
 }
 
 @media screen and (max-width: 768px) {
-  .blog img {
-    width: 100%;
-    height: 20rem;
-    border-radius: 0.5rem;
-  }
+	.blog img {
+		width: 100%;
+		height: 100%;
+		max-height: 20rem;
+		border-radius: 0.5rem;
+		object-fit: cover;
+	}
 }
 
 @media screen and (max-width: 480px) {
-  .blog img {
-    width: 100%;
-    height: 15rem;
-    border-radius: 0.5rem;
-  }
+	.blog img {
+		width: 100%;
+		height: 100%;
+		max-height: 10rem;
+		border-radius: 0.5rem;
+		object-fit: cover;
+	}
 
-  .blog p {
-    font-size: 1rem;
-  }
+	.blog p {
+		font-size: 1rem;
+	}
 }
