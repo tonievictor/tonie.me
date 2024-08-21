@@ -62,7 +62,7 @@
 .blog ol,
 .blog img,
 .blog blockquote {
-	margin-bottom: 0.75rem;
+	margin-bottom: 1rem;
 }
 
 .blog h1 {
@@ -92,6 +92,7 @@
 	border-left: 2px solid var(--highlight-color);
 	padding: 0 0.5rem;
 	flex-direction: column;
+	opacity: 0.9;
 }
 
 .blog p code {
@@ -127,4 +128,19 @@
 		border-radius: 0.5rem;
 		object-fit: cover;
 	}
+}
+
+.blog p,
+.blog h1,
+.blog h2,
+.blog h3,
+.blog h4,
+.blog h5,
+.blog h6,
+.blog pre,
+.blog ul,
+.blog ol,
+.blog img,
+.blog blockquote {
+	margin-bottom: 0.75rem;
 }
