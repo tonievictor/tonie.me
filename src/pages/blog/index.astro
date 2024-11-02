@@ -21,7 +21,7 @@ const posts = (await getCollection('articles', ({ data }) => data.draft !== true
 					<>
 						<li class="post">
 							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							<p>{post.data.description}</p>
+							<!--<p>{post.data.description}</p>-->
 							<FormattedDate date={post.data.pubDate}/>
 						</li>
 					</>
