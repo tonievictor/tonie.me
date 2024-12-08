@@ -11,6 +11,8 @@ import Back from "../components/Back.astro";
 type Props = CollectionEntry<'articles'>['data'];
 
 let {title, heroImage, pubDate, tags, description, heroImageAlt} = Astro.props as Props;
+
+const tagsArr = tags.split(",").splice(0, 3);
 ---
 
 <!DOCTYPE html>
@@ -40,6 +42,10 @@ let {title, heroImage, pubDate, tags, description, heroImageAlt} = Astro.props a
                 </div>
             </section>
         <slot/>
+							<div class="post_tags">
+								{tagsArr.map((t) => 
+									<span>{t}</span>
+								)}
         </main>
 				<Footer />
 	</body>
