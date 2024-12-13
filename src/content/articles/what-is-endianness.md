@@ -2,7 +2,8 @@
 title: "What is Endianness?"
 description: "Endianness is the order in which bytes of a multi-byte data type is stored within a given architecture. It ensures consistency when proccessing data, particularly across systems that use different byte ordering formats."
 pubDate: "02 November 2024"
-tags: "endianness, computer architecture, binary representation, hexadecimal, cpu registers, data storage"
+keywords: "endianness, computer architecture, binary representation, hexadecimal, cpu registers, data storage"
+tags: ["endianess", "computer architecture", "binary representation"]
 draft: false
 ---
 

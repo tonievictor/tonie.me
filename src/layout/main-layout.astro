@@ -7,17 +7,18 @@ type Props = {
 	title: string,
 	description: string,
 	image? : string,
-	tags? : string,
+	keywords? : string,
 	showfooter?: string,
 }
-let { title, description, image, tags, showfooter} =  Astro.props as Props;
+let { title, description, image, keywords, showfooter} =  Astro.props as Props;
 if (!showfooter) showfooter = "true";
-if (!tags) tags = "tonie, victor, developer, software, engineer, nwanochi, chisom, python, c, typescript, golang, nodejs, gleam, rust, backend";
+if (!keywords) keywords = "tonie, victor, developer, software, engineer, nwanochi, chisom, python, c, typescript, golang, nodejs, gleam, rust, backend";
+console.log(keywords)
 ---
 
 <html lang="en">
 	<head>
-		<SeoHead title={title} description={description} image={image} keywords={tags}/>
+		<SeoHead title={title} description={description} image={image} keywords={keywords}/>
 	</head>
 	<body>
 		<slot />
