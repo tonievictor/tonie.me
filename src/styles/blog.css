@@ -66,6 +66,10 @@
 	margin-bottom: 1rem;
 }
 
+.blog img {
+	margin-top: 1rem;
+}
+
 .blog h1 {
 	font-size: 27px;
 }
