@@ -1,6 +1,6 @@
 ---
 title: "MapReduce: Simplified Data Processing on Large Clusters"
-description: "MapReduce is a programming model used in distributed systems to process large datasets efficiently by dividing tasks into simple map and reduce functions, with fault tolerance and minimized network overhead"
+description: "MapReduce is a programming model used in distributed systems to process large datasets efficiently by dividing tasks into simple map and reduce functions."
 pubDate: "13 December 2024"
 keywords: "mapreduce, distributed systems, fault tolerance, network overhead, parallel computation, distributed word count, key-value pairs, master node, map function, reduce function"
 tags: ["distributed computation", "paper review"]
