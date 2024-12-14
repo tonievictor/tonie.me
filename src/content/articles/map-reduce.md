@@ -18,7 +18,7 @@ reduce(k2, list(v2)) -> list(v2)
 ```
 
 A common application of this model is in a distributed word counter program where you have a very large input file and want to count the occurrence of each word in the file. Instead of running this on a single machine, you divide the input file into smaller chunks and distribute it across several machines.
-The `map` function in this scenario takes in a key and value (file name and file content) and records a count of each word along with its associated count in a file. The `reduce` function takes a word and a list of the associated counts and combines it into a single value.
+The `map` function in this scenario takes in a key and value (file name and file content) and records each word along with its associated count in a file. The `reduce` function takes a word and a list of the associated counts and combines it into a single value.
 
 ```
 map (filename string, filecontent string) -> {
