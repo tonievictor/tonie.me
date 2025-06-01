@@ -30,9 +30,9 @@ export const ProjectsData: ProjectsDataType[] = [
 	},
 	{
 		id: 3,
-		title: "Socket GC",
+		title: "Echo",
 		overview: "A terminal based groupchat application.",
-		link: "https://github.com/tonievictor/socket-gc",
+		link: "https://github.com/tonievictor/echo",
 		tags: ["c", "networking", "sockets"]
 	},
 ];
