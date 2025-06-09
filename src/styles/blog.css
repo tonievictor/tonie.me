@@ -83,7 +83,7 @@
 	font-size: 0.9rem;
 	overflow-x: auto;
 	border-radius: 0.5rem;
-	width: 100%;
+	width: 99.5%;
 }
 
 .blog pre code {
@@ -109,9 +109,10 @@
 }
 
 .blog img {
-	width: 100%;
+	width: 99.5%;
 	height: 100%;
 	max-height: 30rem;
+	border-radius: .2rem;
 	/*object-fit: contain;*/
 	/*border-radius: 0.5rem;*/
 }
@@ -123,4 +124,12 @@
 .blog img,
 .blog blockquote {
 	margin-bottom: 0.75rem;
+}
+
+
+@media screen and (max-width: 480px) {
+	.blog img,
+	.blog pre {
+		width: 99.5%;
+	}
 }
