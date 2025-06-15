@@ -6,28 +6,12 @@ footer {
   font-size: 0.9rem;
 }
 
-footer span {
+footer span  {
   opacity: 0.5;
+  line-height: 150%;
 }
 
 footer a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.4rem 1rem;
-  border-radius: 0.5rem;
-  background-color: rgba(252, 163, 17, 0.8);
-  color: white;
+  opacity: 0.5;
   line-height: 150%;
-  font-size: 1rem;
-}
-
-@media screen and (max-width: 480px) {
-  footer a {
-    line-height: 150%;
-    font-size: 1rem;
-    padding: 0.2rem 1rem;
-    gap: 0rem;
-  }
 }
