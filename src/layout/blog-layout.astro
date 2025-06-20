@@ -42,7 +42,7 @@ let {title, tags, heroImage, pubDate, keywords, description, heroImageAlt} = Ast
         <slot/>
 							<div class="post_tags">
 								{tags.map((t) => 
-									<span>{t}</span>
+								<a href={`/blog/tags/${t.replace(" ", "-")}`}>{t}</a>
 								)}
         </main>
 				<Footer />

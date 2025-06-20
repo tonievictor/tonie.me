@@ -41,7 +41,7 @@ main {
 	flex-wrap: wrap;
 }
 
-.post_tags span{
+.post_tags a{
 	background-color: #1a1a1a;
 	font-weight: 400;
 	filter: brightness(130%);

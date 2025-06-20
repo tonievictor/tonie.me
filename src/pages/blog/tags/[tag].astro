@@ -1,0 +1,51 @@
+---
+import MainLayout from "../../../layout/main-layout.astro";
+import { getCollection } from 'astro:content';
+import FormattedDate from "../../../components/FormattedDate.astro";
+import "../../../styles/index.css";
+import "../../../styles/blog.css";
+import Nav from "../../../components/Nav.astro";
+import Header from '../../../components/Header.astro';
+
+
+export async function getStaticPaths() {
+	const posts = (await getCollection('articles'));
+	const tags = [...new Set(posts.map((p) => p.data.tags).flat())]
+		.filter((p) => p.length > 0);
+	return tags.map((t) => ({
+		params: {tag: t.replace(" ", "-")}
+	}))
+}
+
+const { tag } = Astro.params;
+const posts = (await getCollection('articles', ({ data }) => data.draft !== true ))
+	?.filter((p) => p.data.tags.includes(tag))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+<MainLayout title=`Blog | Tag: ${tag}` description="Tonie - Software Developer">
+	<Nav />
+	<Header />
+	<main>
+		<section>
+			<span style={{
+				"font-style": "italic",
+				"font-size": "1rem",
+				"opacity": "0.6"
+			}}>
+				{`Showing results for tag: `}<b>{`${tag}`}</b>
+			</span>
+			<h2 class="section__title">Posts</h2>
+			<ul class="posts_container">
+				{posts.map((post) => (
+					<>
+						<li class="post">
+							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+							<FormattedDate date={post.data.pubDate}/>
+						</li>
+					</>
+				))}
+			</ul>
+		</section>
+	</main>
+</MainLayout>
+

@@ -14,4 +14,7 @@ footer span  {
 footer a {
   opacity: 0.5;
   line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
