@@ -6,6 +6,7 @@ keywords: "regexes, regular expressions, finite automata, nfa, state machine, to
 tags: ["gleam", "regex", "nfa", "rexen"]
 draft: false
 ---
+
 A couple months ago, I built a tool called [rexen](https://github.com/tonievictor/rexen) that compiles and evaluates regular expressions (regexes) using Non-deterministic Finite Automaton (NFA). Regexes are pretty ubiquitous in computer programming and this was my attempt at understanding how they work. 
 
 A regular expression (regex) is a sequence of characters/symbols that abstractly
@@ -60,7 +61,3 @@ construction algorithm which recursively builds an ε-NFA (NFA with epsilon tran
 4. For concatenation `ab` (a followed by b) we create the individual nfas for `a` and `b` and connect them together by creating an epsilon transition from the end state(s) of `NFA(a)` to the initial state of `NFA(b)`. ![Concatenation Rule](/images/concat-rule.png)
 5. For closure `a*` (zero or more occurrences of a) we create two new states `q` and `f` then we create a transition from `q` to `f`, from `q` to the initial state of `NFA(a)`, from the end state of `NFA(a)` to `f` and then from the end state of `NFA(a)` to its initial state. ![Closure Rule](/images/closure-rule.png)
 
-> While building rexen, I discovered that it was more convenient to work with
-> post-fix notations, so before converting to `NFA`, I converted the regex
-> to post-fix using the Shunting-Yard Algorithm (`SYA`) ie the regex `a|b` becomes
-> `ab|` and `a(ab)*` becomes `aab*`.
