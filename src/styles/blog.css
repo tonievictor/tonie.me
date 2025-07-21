@@ -44,6 +44,15 @@
 .blog ol {
 	list-style-position: inside;
 	padding-left: 1rem;
+	display: flex;
+	flex-direction:column;
+	gap: 1rem;
+}
+
+.blog li::before {
+	content: "";
+	width: 4px;
+	display: inline-block;
 }
 
 /* For some reason this is the style used for ul that contain checkboxes */
@@ -105,7 +114,7 @@
 	opacity: 0.9;
 }
 
-.blog p code {
+.blog code {
 	all: unset;
 	background-color: #2d2d2d;
 	font-size: 0.984rem;
@@ -139,3 +148,4 @@
 		width: 99.5%;
 	}
 }
+
