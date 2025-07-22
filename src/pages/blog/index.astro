@@ -10,7 +10,7 @@ import Header from '../../components/Header.astro';
 
 const posts = (await getCollection('articles', ({ data }) => data.draft !== true ))?.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
-<MainLayout title="Blog" description="Tonie - Software Developer">
+<MainLayout title="Tonie | Blog" description="Tonie - Software Developer">
 	<Nav />
 	<Header />
 	<main>

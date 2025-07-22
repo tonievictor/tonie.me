@@ -1,24 +1,24 @@
-import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
-export async function GET(context: { site: string }) {
-  const blog = (
-    await getCollection("articles", ({ data }) => data.draft !== true)
-  )?.sort((a, b) => {
-    return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
-  });
+export async function GET(context) {
 
-  const posts = blog.map((post) => ({
-    title: post.data.title,
-    pubDate: post.data.pubDate,
-    description: post.data.description,
-		link: `/posts/${post.slug}`,
-  }));
+	const posts = (await getCollection(
+		'articles', ({ data }) => data.draft !== true))
+		?.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).map((p) => (
+			{
+				title: p.data.title,
+				description: p.data.description,
+				pubDate: p.data.pubDate,
+				link: p.slug,
+			}
+		));
 
-  return rss({
-    title: "Tonie's Blog",
-    description: "My corner of the internet.",
-    site: context.site,
-    items: posts,
-  });
+	return rss({
+		title: "Tonie's Blog",
+		description: "Sharing my thoughts and experiences one byte at a time.",
+		site: context.site,
+		items: posts,
+		customData: `<language>en-us</language>`,
+	});
 }
