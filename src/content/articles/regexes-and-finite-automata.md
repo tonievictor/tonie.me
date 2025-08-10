@@ -43,7 +43,7 @@ There a two types of FAs: Deterministic Finite Automaton (DFA) and Non-determini
 The major difference between the both of them is that in a DFA, every state has exactly one transition for each 
 possible input while in an NFA, an input can lead to one, more than one, or no transition for a given state. Technically, all NFAs can be represented as (possibly more complex) DFAs and there are a number of algorithms to convert an NFA to its corresponding DFA.
 
-How does this help us evaluate regexes? In the contrived example below, the string `bob` satisfies the
+In the contrived example below, the string `bob` satisfies the
 requirement to incrementally move from the initial state up until the end state, so we
 can conclude that it matches the pattern specified by the regex. In contrast,
 the string `bab` fails to meet the requirement to move from state 1 to 2 and
@@ -51,13 +51,20 @@ since there is no other logical way to get to the end state, we can conclude tha
 fails to match the regex pattern.
 ![String simulation overview](/images/bobbab.png)
 
-Now that we (hopefully) know how an NFA works, the final piece is converting or
-representing a regex as an NFA. For that, we employ the Thompson's
-construction algorithm which recursively builds an ε-NFA (NFA with epsilon transitions. Epsilon transitions allow the NFA to transition between inputs without consuming an input) from a regular expression by applying the following rules:
+## Converting Regexes to NFA
+To convert a regular expression to NFA we go through the following steps:
+1. Split the regex string into distinct tokens and establish operator
+precedence
+2. Convert from infix to postfix (reverse polish) notation using the Shunting-Yard Algorithm
+(SYA).
+
 
 1. For empty expressions `""` return ![Epsilon Rule](/images/epsilon-rule.png)
 2. For single character expressions ie `a` return ![Symbol Rule](/images/symbol-rule.png)
 3. For union expressions ie `a|b` (a or b) we first create different nfas for `a` and `b` and then join them together by creating a new initial state (`q`) with an epsilon transition from `q` to the initial states of the nfas for `a` and `b` and an epsilon transition from final states of `a` and `b` to a new final state `qf`. ![Union Rule](/images/union-rule.png)
 4. For concatenation `ab` (a followed by b) we create the individual nfas for `a` and `b` and connect them together by creating an epsilon transition from the end state(s) of `NFA(a)` to the initial state of `NFA(b)`. ![Concatenation Rule](/images/concat-rule.png)
 5. For closure `a*` (zero or more occurrences of a) we create two new states `q` and `f` then we create a transition from `q` to `f`, from `q` to the initial state of `NFA(a)`, from the end state of `NFA(a)` to `f` and then from the end state of `NFA(a)` to its initial state. ![Closure Rule](/images/closure-rule.png)
-
+> The names we call the states are really not important. We just have to make
+> sure that the names of each states are unique to avoid collisions when trying
+> to transition between states. Also, if you ever need to visualize the `nfa`,
+> it's easier to differentiate between states if they have different labels.
