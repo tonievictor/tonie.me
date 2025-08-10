@@ -36,7 +36,6 @@
 .blog h5 {
 	width: max-content;
 	line-height: 1.75rem;
-	margin-top: 2.5rem;
 	margin-bottom: 2rem;
 }
 
@@ -108,7 +107,7 @@
 .blog blockquote {
 	font-style: italic;
 	display: flex;
-	border-left: 2px solid var(--highlight-color);
+	border-left: 4px solid var(--highlight-color);
 	padding: 0 0.5rem;
 	flex-direction: column;
 	opacity: 0.9;
