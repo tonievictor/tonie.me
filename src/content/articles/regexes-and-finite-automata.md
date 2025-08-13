@@ -1,7 +1,7 @@
 ---
 title: "Regular Expressions and Finite Automata"
 description: "A regular expression (regex) is a sequence of characters/symbols that abstractly represent or define a set of strings (also known as a regular language)."
-pubDate: "29 June 2025"
+pubDate: "14 August 2025"
 keywords: "regexes, regular expressions, finite automata, nfa, state machine, tonie, victor, nwanochi, chisom, nigeria, regex, shunting yard algorithm, thomspsons construction, tonie victor, software engineer, gleam, rexen"
 tags: ["gleam", "regex", "nfa", "rexen"]
 draft: false
@@ -56,14 +56,14 @@ To convert a regular expression to NFA we go through the following steps:
 1. Split the regex string into distinct tokens and establish operator
 precedence. Operator precedence determines the order in which operators are
 performed in a given expression - operators with a higher precedence are applied
-before ones with lower precedence. Here is a list of operators in rexen listed
-in descending precedence.
+before ones with lower precedence. Here is a list of operators in rexen in order
+of descending precedence.
 - Kleene Star `*` (zero or more of the preceding character or group of characters).
 - Concatenation (character or group of characters before the operator followed
 by the character or group of characters after the operator).
 - Union `+` (one of the characters or group of characters before or
 after the operator).
-> Concatenation in rexen and indeed in most regex engines is implicit, that
+> Concatenation in rexen and in most regex engines is implicit, that
 > means, there is no symbol that represents it. But for the sake of
 > simplicity, we explicitly inject an operator while tokenizing. ie the expression `ab` becomes `a(Concat)b`. 
 
@@ -72,15 +72,15 @@ after the operator).
 > characters) are variations of the Kleene star operator `*` and as such have
 > equal precedence.
 2. Convert from infix to postfix (reverse polish) notation using the [Shunting-Yard Algorithm
-(SYA)](). Postfix notation is a mathematical notation in which operators follow
-their operandwhereas in infix notation, operators are placed between their
+(SYA)](https://en.wikipedia.org/wiki/Shunting_yard_algorithm). Postfix notation is a mathematical notation in which operators follow
+their operands whereas in infix notation, operators are placed between their
 operands (e.g., a + b in infix becomes a b + in postfix).  
 The main advantage of using postfix notation is that it resolves operator
 precedence, removing the need for using parentheses. It also allows for an
 expression to be evaluated from left to right which is suitable for stack based
 computation. SYA works by reading the input one character at a time from left to
 right and performing one of the following:
-- If it is not an operator or a parentheses, append it to the output buffer.
+- If it is a literal ie. not an operator or a parentheses, append it to the output buffer.
 - If it is a left parentheses `(`, push it onto the stack.
 - If it is an operator and there is a left parentheses `(` on
   top of the stack or the stack is empty, push the operator onto the stack.
