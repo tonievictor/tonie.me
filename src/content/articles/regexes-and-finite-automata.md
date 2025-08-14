@@ -195,5 +195,5 @@ Function kleeneStar(nfa):
     return NFA(start, accept)
 ```
 
-## Simulating NFA Execution on Input Strings
+## Evaluating an Input String by Simulating an NFA
 To determine whether an input string matches the pattern defined by a regular expression and its corresponding NFA, it's important to specify the type of match desired: whether prefix, suffix, or full-string. Rexen performs a full-string evaluation, meaning it attempts to match the entire input string against the NFA, rather than just a portion of it. During this process, it simulates all possible paths the NFA can take by checking each transition against the current character in the input stream. A match is successful if there exists at least one path from the initial state to a final state and the input string has been fully consumed by the end of the traversal.
