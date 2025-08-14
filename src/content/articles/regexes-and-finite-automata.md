@@ -7,7 +7,7 @@ tags: ["gleam", "regex", "nfa", "rexen"]
 draft: false
 ---
 
-A couple months ago, I built a tool called [rexen](https://github.com/tonievictor/rexen) that compiles and evaluates regular expressions (regexes) using Non-deterministic Finite Automaton (NFA). Regexes are pretty ubiquitous in computer programming and this was my attempt at understanding how they work. 
+A couple months ago, I built [rexen](https://github.com/tonievictor/rexen), a tool that compiles and evaluates regular expressions (regexes) using Non-deterministic Finite Automaton (NFA). Regexes are pretty ubiquitous in computer programming and this was my attempt at understanding how they work. 
 
 A regular expression (regex) is a sequence of characters/symbols that abstractly
 represent or define a [set](https://en.wikipedia.org/wiki/Set_(mathematics)) of strings (also known as a [regular language](https://en.wikipedia.org/wiki/Regular_language)). For
