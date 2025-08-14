@@ -36,6 +36,7 @@
 .blog h5 {
 	width: max-content;
 	line-height: 1.75rem;
+	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
 
@@ -44,7 +45,7 @@
 	list-style-position: inside;
 	padding-left: 1rem;
 	display: flex;
-	flex-direction:column;
+	flex-direction: column;
 	gap: 1rem;
 }
 
@@ -139,7 +140,6 @@
 	margin-bottom: 0.75rem;
 }
 
-
 @media screen and (max-width: 480px) {
 
 	.blog img,
@@ -147,4 +147,3 @@
 		width: 99.5%;
 	}
 }
-
