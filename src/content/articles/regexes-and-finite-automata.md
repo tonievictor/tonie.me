@@ -54,7 +54,7 @@ possible input while in an NFA, an input can lead to one, more than one, or no t
 ## Converting Regexes to NFA
 To convert a regular expression to NFA we go through the following steps:
 1. Split the regex string into distinct tokens and establish operator
-precedence. Operator precedence determines the order in which operators are
+precedence. Operator precedence determines the order in which operations are
 performed in a given expression - operators with a higher precedence are applied
 before ones with lower precedence. Here is a list of operators in rexen in order
 of descending precedence.
