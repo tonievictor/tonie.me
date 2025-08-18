@@ -16,23 +16,23 @@ export const ProjectsData: ProjectsDataType[] = [
 	},
 	{
 		id: 1,
+		title: "Ogugu",
+		overview: "Backend application for an rss file reader",
+		link: "https://github.com/tonievictor/ogugu",
+		tags: ["golang", "postgres", "rss", "observability"]
+	},
+	{
+		id: 2,
+		title: "Bitcask",
+		overview: "Log-structured, key-value datastore",
+		link: "https://github.com/tonievictor/bitcask.rs",
+		tags: ["rust", "database", "log"]
+	},
+	{
+		id: 3,
 		title: "Dotenv",
 		overview: "A package for managing environment variables.",
 		link: "https://pkg.go.dev/github.com/tonievictor/dotenv",
 		tags: ["golang", "dotenv"]
-	},
-	{
-		id: 2,
-		title: "Tsh",
-		overview: "An implementation of the UNIX shell program.",
-		link: "https://github.com/tonievictor/tsh",
-		tags: ["c", "unix", "shell"]
-	},
-	{
-		id: 3,
-		title: "Echo",
-		overview: "A terminal based groupchat application.",
-		link: "https://github.com/tonievictor/echo",
-		tags: ["c", "networking", "sockets"]
 	},
 ];
