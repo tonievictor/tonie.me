@@ -9,6 +9,6 @@ export default defineConfig({
   site: "https://tonie.me/",
   integrations: [icon(), mdx(), sitemap()],
 	redirects: {
-		"/live": "https://twitch.tv/tonievictor",
+		"/videos": "https://www.youtube.com/@tonievictor",
 	},
 });
