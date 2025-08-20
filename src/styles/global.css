@@ -41,8 +41,8 @@ body {
 	font-optical-sizing: auto;
 	font-family: "Atkinson", sans-serif;
 	font-size: 18px;
+	line-height: 1.875rem;
 	background-color: #1a1a1a;
-	line-height: 1.75rem;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	transition-property: all;
