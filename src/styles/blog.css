@@ -1,32 +1,32 @@
 .posts_container {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .post {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .post a {
-	/* font-size: 1.2rem; */
-	font-weight: 500;
-	color: rgb(245, 245, 245);
-	transition: all 100ms ease;
-	display: flex;
-	gap: 0.4rem;
-	align-items: center;
-	text-decoration: underline;
+  /* font-size: 1.2rem; */
+  font-weight: 500;
+  color: rgb(245, 245, 245);
+  transition: all 100ms ease;
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  text-decoration: underline;
 
 }
 
 .post p {
-	font-size: 17px;
+  font-size: 17px;
 }
 
 .post a:hover {
-	color: var(--highlight-color);
+  color: var(--highlight-color);
 }
 
 .blog h1,
@@ -34,34 +34,27 @@
 .blog h3,
 .blog h4,
 .blog h5 {
-	line-height: 1.75rem;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+  line-height: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .blog ul,
 .blog ol {
-	list-style-position: inside;
-	padding-left: 1rem;
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-}
-
-.blog li::before {
-	content: "";
-	width: 4px;
-	display: inline-block;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 /* For some reason this is the style used for ul that contain checkboxes */
 .contains-task-list {
-	list-style: none;
+  list-style: none;
 }
 
 .post p,
 .post time {
-	opacity: 0.8;
+  opacity: 0.8;
 }
 
 .blog p,
@@ -76,73 +69,66 @@
 .blog ol,
 .blog img,
 .blog blockquote {
-	margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .blog img {
-	margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .blog h1 {
-	font-size: 27px;
+  font-size: 1.69rem;
 }
 
+
 .blog h2 {
-	font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .blog pre {
-	padding: 1.25rem;
-	font-size: 0.9rem;
-	overflow-x: auto;
-	border-radius: 0.5rem;
-	width: 99.5%;
+  padding: 1.25rem;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  width: 99.5%;
 }
 
 .blog pre code {
-	border-radius: 0.5rem;
-	all: unset;
+  border-radius: 0.5rem;
+  all: unset;
 }
 
 .blog blockquote {
-	font-style: italic;
-	display: flex;
-	border-left: 4px solid var(--highlight-color);
-	padding: 0 0.5rem;
-	flex-direction: column;
-	opacity: 0.9;
+  font-style: italic;
+  display: flex;
+  border-left: 4px solid var(--highlight-color);
+  padding: 0 0.5rem;
+  flex-direction: column;
+  opacity: 0.9;
 }
 
 .blog code {
-	all: unset;
-	background-color: #2d2d2d;
-	font-size: 0.984rem;
-	border-radius: .2rem;
-	padding: 0.2rem
+  all: unset;
+  background-color: #2d2d2d;
+  font-size: 0.984rem;
+  border-radius: .2rem;
+  padding: 0.2rem
 }
 
 .blog img {
-	width: 99.5%;
-	height: 100%;
-	max-height: 30rem;
-	border-radius: .2rem;
-	/*object-fit: contain;*/
-	/*border-radius: 0.5rem;*/
+  width: 99.5%;
+  height: 100%;
+  max-height: 30rem;
+  border-radius: .2rem;
+  /*object-fit: contain;*/
+  /*border-radius: 0.5rem;*/
 }
 
-.blog p,
-.blog pre,
-.blog ul,
-.blog ol,
-.blog img,
-.blog blockquote {
-	margin-bottom: 0.75rem;
-}
 
 @media screen and (max-width: 480px) {
 
-	.blog img,
-	.blog pre {
-		width: 99.5%;
-	}
+  .blog img,
+  .blog pre {
+    width: 99.5%;
+  }
 }

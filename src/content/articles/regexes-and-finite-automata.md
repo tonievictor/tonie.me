@@ -41,9 +41,8 @@ fails to match the regex pattern.
 This idea is formally referred to as a `finite automata` or `finite state machine`.
 
 A Finite Automaton ([FA](https://en.wikipedia.org/wiki/Finite-state_machine)) is a mathematical model that can be in one 
-of a limited number of states and can transition between them in reaction to an input/event. 
-It consists of a `finite` set of states, an initial state, a transition function that defines
-the rules to go from one state to another and (optionally) a set of end states. For example, a light bulb can be
+of a limited number of states and can transition between them in reaction to an
+input/event. For example, a light bulb can be
 in only one of two states at a time (off or on) and can transition between these
 states based on an external signal from a switch. 
 
@@ -58,15 +57,10 @@ precedence. Operator precedence determines the order in which operations are
 performed in a given expression - operators with a higher precedence are applied
 before ones with lower precedence. Here is a list of operators in rexen in order
 of descending precedence.
-- Kleene Star `*` (zero or more of the preceding character or group of characters).
-- Concatenation (character or group of characters before the operator followed
-by the character or group of characters after the operator).
-- Union `+` (one of the characters or group of characters before or
-after the operator).
-> Concatenation in rexen and in most regex engines is implicit, that
-> means, there is no symbol that represents it. But for the sake of
-> simplicity, we explicitly inject an operator while tokenizing. ie the expression `ab` becomes `a(Concat)b`. 
-
+- Kleene Star `*` (ie `a*` means zero or more occurences of a).
+- Concatenation (ie `ab` means a followed by b). There is no symbol for
+concatenation, we just place the characters side by side.
+- Union `|` (ie `a|b` means a or b).
 > Operators like `+` (one or more of the preceding character or group of
 > characters) and `?` (zero or one of the preceding character or group of
 > characters) are variations of the Kleene star operator `*` and as such have
@@ -140,10 +134,10 @@ while stack is not empty:
 - For union expressions ie `a|b` (a or b) we first create different nfas for `a` and `b` and then join them together by creating a new initial state (`q`) with an epsilon transition from `q` to the initial states of the nfas for `a` and `b` and an epsilon transition from final states of `a` and `b` to a new final state `qf`. ![Union Rule](/images/union-rule.png)
 - For concatenation `ab` (a followed by b) we create the individual nfas for `a` and `b` and connect them together by creating an epsilon transition from the end state(s) of `NFA(a)` to the initial state of `NFA(b)`. ![Concatenation Rule](/images/concat-rule.png)
 -  For closure `a*` (zero or more occurrences of a) we create two new states `q` and `f` then we create a transition from `q` to `f`, from `q` to the initial state of `NFA(a)`, from the end state of `NFA(a)` to `f` and then from the end state of `NFA(a)` to its initial state. ![Closure Rule](/images/closure-rule.png)
-> The names we call the states are really not important. We just have to make
-> sure that the names of each states are unique to avoid collisions when trying
-> to transition between states. Also, if you ever need to visualize the `nfa`,
-> it's easier to differentiate between states if they have different labels.
+<!-- > The names we call the states are really not important. We just have to make -->
+<!-- > sure that the names of each states are unique to avoid collisions when trying -->
+<!-- > to transition between states. Also, if you ever need to visualize the `nfa`, -->
+<!-- > it's easier to differentiate between states if they have different labels. -->
 ```
 input := "aab+" # expression in postfix form.
 for each token in input:
@@ -151,19 +145,19 @@ for each token in input:
         nfa := create basic NFA for character
         stack.push(nfa)
 
-    else if token is concatenation '.':
+    else if token is concatenation:
         nfa2 := stack.pop()
         nfa1 := stack.pop()
         newNFA := concatenate(nfa1, nfa2)
         stack.push(newNFA)
 
-    else if token is alternation '|':
+    else if token is union:
         nfa2 := stack.pop()
         nfa1 := stack.pop()
         newNFA := alternate(nfa1, nfa2)
         stack.push(newNFA)
 
-    else if token is Kleene star '*':
+    else if token is kleene star:
         nfa := stack.pop()
         newNFA := kleeneStar(nfa)
         stack.push(newNFA)
