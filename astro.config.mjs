@@ -8,7 +8,8 @@ import icon from "astro-icon";
 export default defineConfig({
   site: "https://tonie.me/",
   integrations: [icon(), mdx(), sitemap()],
-	redirects: {
-		"/videos": "https://www.youtube.com/@tonievictor",
-	},
+  redirects: {
+    "/videos": "https://www.youtube.com/@tonievictor",
+    "/blog/regexes-and-finite-automata": "/404"
+  },
 });

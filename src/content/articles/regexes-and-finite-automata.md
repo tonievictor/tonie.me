@@ -4,7 +4,7 @@ description: "A regular expression (regex) is a sequence of characters/symbols t
 pubDate: "14 August 2025"
 keywords: "regexes, regular expressions, finite automata, nfa, state machine, tonie, victor, nwanochi, chisom, nigeria, regex, shunting yard algorithm, thomspsons construction, tonie victor, software engineer, gleam, rexen"
 tags: ["gleam", "regex", "nfa", "rexen"]
-draft: false
+draft: true
 ---
 
 A couple months ago, I built [rexen](https://github.com/tonievictor/rexen), a tool that compiles and evaluates regular expressions (regexes) using Non-deterministic Finite Automaton (NFA). Regexes are pretty ubiquitous in computer programming and this was my attempt at understanding how they work. 
