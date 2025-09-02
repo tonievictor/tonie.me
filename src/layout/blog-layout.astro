@@ -35,11 +35,6 @@ let {title, tags, heroImage, pubDate, keywords, description, heroImageAlt} = Ast
                     <h1>{title}</h1>
                     <FormattedDate date={pubDate}/>
 									</div>
-										{
-											heroImage && (<div class="top_image">
-												<img src={heroImage} alt={heroImageAlt} loading="lazy"/>
-											</div>)
-										}
                 </div>
             </section>
             <slot/>
