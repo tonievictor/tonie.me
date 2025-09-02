@@ -5,7 +5,7 @@ pubDate: "13 December 2024"
 keywords: "mapreduce, distributed systems, fault tolerance, network overhead, parallel computation, distributed word count, key-value pairs, master node, map function, reduce function"
 tags: ["distsys", "review", "paper"]
 heroImage: "/images/map-reduce-execution.png"
-draft: true
+draft: false
 ---
 
 Processing a very large input dataset on a single machine can be time-consuming and inefficient. For example, if an error occurs during processing, you might have to start over. An alternative is to adopt a distributed system and by extension its challenges.
