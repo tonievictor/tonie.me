@@ -14,8 +14,6 @@ export async function GET(context) {
 			}
 		));
 
-  console.log(posts)
-
 	return rss({
 		title: "Tonie's Blog",
 		description: "Sharing my thoughts and experiences one byte at a time.",
