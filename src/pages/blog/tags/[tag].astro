@@ -34,13 +34,14 @@ const posts = (await getCollection('articles', ({ data }) => data.draft !== true
 			}}>
 				{`Showing results for tag: `}<b>{`${tag}`}</b>
 			</span>
-			<h2 class="section__title">Posts</h2>
+			<h2 class="section__title">Blog</h2>
 			<ul class="posts_container">
 				{posts.map((post) => (
 					<>
 						<li class="post">
-							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							<FormattedDate date={post.data.pubDate}/>
+							<!--<p>{post.data.description}</p>-->
+							<FormattedDate date={post.data.pubDate} class="time"/>
+          <a href={`/blog/${post.slug}/`} class="title">{post.data.title}</a>
 						</li>
 					</>
 				))}

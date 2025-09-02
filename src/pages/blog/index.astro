@@ -15,14 +15,14 @@ const posts = (await getCollection('articles', ({ data }) => data.draft !== true
 	<Header />
 	<main>
 		<section>
-			<h2 class="section__title">Posts</h2>
+			<h2 class="section__title">Blog</h2>
 			<ul class="posts_container">
 				{posts.map((post) => (
 					<>
 						<li class="post">
-							<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
 							<!--<p>{post.data.description}</p>-->
-							<FormattedDate date={post.data.pubDate}/>
+							<FormattedDate date={post.data.pubDate} class="time"/>
+          <a href={`/blog/${post.slug}/`} class="title">{post.data.title}</a>
 						</li>
 					</>
 				))}
