@@ -10,9 +10,11 @@ export async function GET(context) {
 				title: p.data.title,
 				description: p.data.description,
 				pubDate: p.data.pubDate,
-				link: p.slug,
+				link: `blog/${p.slug}`,
 			}
 		));
+
+  console.log(posts)
 
 	return rss({
 		title: "Tonie's Blog",
