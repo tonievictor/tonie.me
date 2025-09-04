@@ -33,3 +33,8 @@ footer button {
 footer button:hover {
   filter: brightness(90%);
 }
+
+footer button span {
+  font-family: "Arvo", serif;
+  opacity: 1;
+}

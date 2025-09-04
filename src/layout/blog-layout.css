@@ -125,3 +125,8 @@
   border: 0;
   border-top: 1px solid #686868;
 }
+
+.blog sup {
+  text-decoration: underline;
+  font-size: 0.8rem;
+}

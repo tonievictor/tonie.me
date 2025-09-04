@@ -10,6 +10,5 @@ export default defineConfig({
   integrations: [icon(), mdx(), sitemap()],
   redirects: {
     "/videos": "https://www.youtube.com/@tonievictor",
-    "/blog/regexes-and-finite-automata": "/404"
   },
 });
