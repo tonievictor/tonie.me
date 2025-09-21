@@ -24,9 +24,7 @@ footer button {
   align-items: center;
   justify-content: center;
   gap: .3rem;
-  color: #2C2C2C;
-  background-color: #fca311;
-
+  background-color: gray;
 	padding: .4rem 0.95rem;
 }
 

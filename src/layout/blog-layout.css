@@ -83,7 +83,7 @@
 .blog blockquote {
   font-style: italic;
   display: flex;
-  border-left: 4px solid var(--highlight-color);
+  border-left: 4px solid gray;
   padding: 0 0.5rem;
   flex-direction: column;
   opacity: 0.9;

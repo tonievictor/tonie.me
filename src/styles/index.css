@@ -33,11 +33,6 @@ main {
   border-bottom: 1px solid;
 }
 
-.project_title:hover {
-  color: #fca311;
-  transition: ease all 300ms;
-}
-
 .project_arrow {
   font-size: 1rem;
 }

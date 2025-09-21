@@ -1,6 +1,5 @@
 :root {
   --padding-x-lg: 0rem;
-  --highlight-color: #f19e1a;
 }
 
 *,
@@ -53,6 +52,10 @@ a {
   color: inherit;
 }
 
+a:hover {
+  filter: brightness(90%);
+}
+
 p {
   line-height: 1.75rem;
 }
@@ -74,16 +77,6 @@ section {
   font-weight: 800;
   display: flex;
   align-items: center;
-}
-
-.section__title::before {
-  content: "";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.5rem;
-  width: 0.2rem;
-  background-color: #fca311;
 }
 
 @media screen and (max-width: 1024px) {
@@ -114,12 +107,5 @@ section {
 
   .section__title {
     font-size: 1.8rem;
-  }
-
-  .section__title::before {
-    content: "";
-    height: 2rem;
-    width: 0.2rem;
-    background-color: #fca311;
   }
 }
