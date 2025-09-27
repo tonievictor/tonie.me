@@ -43,10 +43,6 @@ nav {
 	justify-content: center;
 }
 
-.social_link:hover {
-	color: #fca311;
-}
-
 @media screen and (max-width: 480px) {
 	.logo__img {
 		width: 2rem;

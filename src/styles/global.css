@@ -1,6 +1,6 @@
 :root {
   --padding-x-lg: 0rem;
-  --highlight-color: #f19e1a;
+  --highlight-color: #ff6719;
 }
 
 *,
@@ -53,6 +53,10 @@ a {
   color: inherit;
 }
 
+a:hover {
+  filter: brightness(80%);
+}
+
 p {
   line-height: 1.75rem;
 }
@@ -83,7 +87,7 @@ section {
   justify-content: center;
   height: 2.5rem;
   width: 0.2rem;
-  background-color: #fca311;
+  background-color: var(--highlight-color);
 }
 
 @media screen and (max-width: 1024px) {

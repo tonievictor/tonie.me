@@ -12,12 +12,6 @@
 .post .title {
   text-decoration: underline;
   padding-bottom: 1rem;
-  /* width: 100%; */
-  /* max-width: max-content; */
-}
-
-.post a:hover {
-  color: var(--highlight-color);
 }
 
 @media screen and (min-width: 800px) {

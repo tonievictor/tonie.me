@@ -15,7 +15,7 @@ header {
   align-items: center;
   cursor: pointer;
   font-size: 0.9rem;
-  color: #fca311;
+  color: var(--highlight-color);
   font-weight: 600;
 }
 
@@ -24,10 +24,6 @@ header {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-}
-
-.nav__menu a:hover {
-  color: #fca311;
 }
 
 .hidden {
