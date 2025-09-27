@@ -121,9 +121,7 @@ section {
   }
 
   .section__title::before {
-    content: "";
     height: 2rem;
     width: 0.2rem;
-    background-color: #fca311;
   }
 }
