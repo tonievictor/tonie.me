@@ -1,35 +1,35 @@
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem var(--padding-x-lg) 1rem;
-  font-size: 0.9rem;
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem var(--padding-x-lg) 1rem;
+	font-size: 0.9rem;
 }
 
-footer span {
-  opacity: 0.5;
-  line-height: 150%;
+.footer span {
+	opacity: 0.65;
+	line-height: 150%;
 }
 
-footer button {
-  border: none;
-  font-weight: 400;
-  font-size: .9rem;
-  cursor: pointer;
-  width: max-content;
-  display: flex;
-  align-items: flex-end;
-  gap: .3rem;
-  color: white;
-  background-color: transparent;
-  text-decoration: underline;
+.footer button {
+	border: none;
+	font-weight: 400;
+	font-size: .9rem;
+	cursor: pointer;
+	width: max-content;
+	display: flex;
+	align-items: flex-end;
+	gap: .3rem;
+	color: white;
+	background-color: transparent;
+	text-decoration: underline;
 }
 
-footer button:hover {
-  filter: brightness(90%);
+.footer button:hover {
+	filter: brightness(90%);
 }
 
-footer button span {
-  font-family: "Arvo", serif;
-  opacity: 1;
+.footer button span {
+	font-family: "Arvo", serif;
+	opacity: 1;
 }
