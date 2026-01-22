@@ -1,11 +1,11 @@
 ---
-title: "Hello"
-description: "An introduction."
-pubDate: "19 April 2024"
-keywords: "hello world, blog, welcome, software"
+title: Hello
+description: An introduction.
+pubDate: 19 April 2024
+keywords: 'hello world, blog, welcome, software'
 draft: false
 ---
-Hello and welcome to my blog. 
+Hello and welcome to my blog.
 
 What will this be about? Well, I plan to treat it like a journal; a place where I can pen down my thoughts, ideas, views, experiences and understanding of software technologies and practices.
 
