@@ -21,13 +21,13 @@ main {
 
 body {
 	overflow-x: clip;
-	color: #f8f9fa;
-	font-family: "Arvo", serif;
-	font-weight: 400;
+	color: #f5f5f5;
+	font-family: "Roboto Slab", serif;
+	font-optical-sizing: auto;
 	font-style: normal;
-	font-size: 16px;
-	line-height: 1.65;
-	background-color: #1a1a1a;
+	font-size: 18px;
+	line-height: 28px;
+	background-color: #212121;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	transition-property: all;
@@ -37,15 +37,6 @@ body {
 	flex-direction: column;
 	margin: auto;
 	display: flex;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	line-height: 1.2;
 }
 
 a {
@@ -103,16 +94,6 @@ section {
 }
 
 @media screen and (max-width: 480px) {
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		line-height: 1.2;
-	}
-
 	a {
 		text-decoration: none;
 		color: inherit;

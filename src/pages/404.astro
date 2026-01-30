@@ -1,13 +1,13 @@
 ---
-import MainLayout from "../layout/main-layout.astro"
-import Nav from "../components/Nav.astro"
-import Back from "../components/Back.astro"
+import MainLayout from "../layout/main-layout.astro";
+import Nav from "../components/Nav.astro";
+import Back from "../components/Back.astro";
 ---
 
 <MainLayout title="Tonie | 404" description="Page not found" showfooter="false">
-  <Nav />
+	<Nav />
 	<div class="back_div">
-		<Back text="Back" url="/"></Back>
+		<Back text="Back" url="/" />
 	</div>
 	<main>
 		<div class="notfound">
@@ -30,7 +30,7 @@ import Back from "../components/Back.astro"
 		font-size: 128px;
 		font-weight: 900;
 		line-height: 198px;
-		color: white
+		color: white;
 	}
 
 	.notfound p {

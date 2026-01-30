@@ -23,13 +23,15 @@ footer button {
 	color: white;
 	background-color: transparent;
 	text-decoration: underline;
+	font-family: "Roboto Slab", serif;
 }
+
+footer button span {}
 
 footer button:hover {
 	filter: brightness(90%);
 }
 
 footer button span {
-	font-family: "Arvo", serif;
 	opacity: 1;
 }

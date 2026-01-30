@@ -4,25 +4,35 @@ import Footer from "../components/Footer.astro";
 import SeoHead from "./seo-head.astro";
 
 type Props = {
-	title: string,
-	description: string,
-	image? : string,
-	keywords? : string,
-	showfooter?: string,
-}
-let { title, description, image, keywords, showfooter} =  Astro.props as Props;
+	title: string;
+	description: string;
+	image?: string;
+	keywords?: string;
+	showfooter?: string;
+};
+let { title, description, image, keywords, showfooter } = Astro.props as Props;
 if (!showfooter) showfooter = "true";
-if (!keywords) keywords = "tonie, victor, developer, software, engineer, nwanochi, chisom, python, c, typescript, golang, nodejs, gleam, rust, backend";
+if (!keywords)
+	keywords =
+		"tonie, victor, developer, software, engineer, nwanochi, chisom, python, c, typescript, golang, nodejs, gleam, rust, backend";
 ---
 
 <html lang="en">
 	<head>
 		<meta name="robots" content="index, follow" />
 		<meta name="googlebot" content="index, follow" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-		<SeoHead title={title} description={description} image={image} keywords={keywords}/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<SeoHead
+			title={title}
+			description={description}
+			image={image}
+			keywords={keywords}
+		/>
 	</head>
 	<body>
 		<slot />
