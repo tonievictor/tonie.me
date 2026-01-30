@@ -1,5 +1,5 @@
 :root {
-	--padding-x-lg: 0rem;
+	--padding-x-lg: 1rem;
 	--highlight-color: #ff6719;
 }
 
@@ -25,8 +25,8 @@ body {
 	font-family: "Roboto Slab", serif;
 	font-optical-sizing: auto;
 	font-style: normal;
-	font-size: 18px;
-	line-height: 28px;
+	font-size: 19px;
+	line-height: 29px;
 	background-color: #212121;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -46,10 +46,6 @@ a {
 
 a:hover {
 	filter: brightness(80%);
-}
-
-p {
-	line-height: 1.75rem;
 }
 
 p>a {
@@ -94,24 +90,6 @@ section {
 }
 
 @media screen and (max-width: 480px) {
-	a {
-		text-decoration: none;
-		color: inherit;
-	}
-
-	a:hover {
-		filter: brightness(80%);
-	}
-
-	p {
-		line-height: 1.75rem;
-	}
-
-	p>a {
-		border-bottom: 1px solid;
-		text-decoration: none;
-	}
-
 	section {
 		display: flex;
 		flex-direction: column;
@@ -136,56 +114,7 @@ section {
 		background-color: var(--highlight-color);
 	}
 
-	@media screen and (max-width: 1024px) {
-		:root {
-			--padding-x-lg: 8rem;
-		}
+	:root {
+		--padding-x-lg: 1rem;
 	}
-
-	@media screen and (max-width: 960px) {
-		:root {
-			--padding-x-lg: 4rem;
-		}
-	}
-
-	@media screen and (max-width: 480px) {
-		body {
-			font-size: 16px;
-			line-height: 1.5rem;
-		}
-
-		p {
-			line-height: 1.5rem;
-		}
-
-		:root {
-			--padding-x-lg: 1rem;
-		}
-
-		.section__title {
-			font-size: 1.8rem;
-		}
-
-		.section__title::before {
-			height: 2rem;
-			width: 0.2rem;
-		}
-	}
-}
-
-p {
-	line-height: 1.5rem;
-}
-
-:root {
-	--padding-x-lg: 1rem;
-}
-
-.section__title {
-	font-size: 1.8rem;
-}
-
-.section__title::before {
-	height: 2rem;
-	width: 0.2rem;
 }

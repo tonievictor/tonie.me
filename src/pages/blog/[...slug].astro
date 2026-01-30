@@ -48,7 +48,7 @@ const { Content } = await post.render();
     <div class="blog"><Content/></div>
             <div class="post_tags">
 				{post.data.tags.map((t) => 
-              <a href={`/blog/tags/${t.replace(" ", "-")}`}>{t}</a>
+              <a href={`/blog/tags/${t.replace(" ", "-")}`}>#{t}</a>
               )}
             </div>
         </main>

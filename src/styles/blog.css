@@ -20,6 +20,7 @@
 }
 
 .post p {
+	font-size: 1rem;
 	opacity: 0.9
 }
 
@@ -42,7 +43,6 @@
 .blog {
 	display: flex;
 	flex-direction: column;
-	/* gap: 2rem; */
 }
 
 .blog>* {
@@ -125,23 +125,15 @@
 }
 
 .post_tags a {
-	background-color: #1a1a1a;
 	font-weight: 400;
-	filter: brightness(130%);
-	padding: 0 0.95rem;
+	font-size: .8rem;
 	opacity: .6;
 	color: white;
-	border-radius: 2rem;
-	box-shadow: 0 1 2px rgba(0, 0, 0, 0.5);
-	display: flex;
-	cursor: pointer;
 	width: max-content;
-	align-items: center;
-	justify-content: center;
 }
 
 .post_tags a:hover {
-	filter: brightness(100%);
+	filter: brightness(90%);
 }
 
 .blog hr {
@@ -156,5 +148,3 @@
 .blog sup {
 	text-decoration: underline;
 }
-
-* Blog Post */
