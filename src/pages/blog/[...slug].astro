@@ -1,57 +1,71 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import "../../styles/blog.css"
-import FormattedDate from '../../components/FormattedDate.astro';
-import Nav from '../../components/Nav.astro';
+import { type CollectionEntry, getCollection } from "astro:content";
+import "../../styles/blog.css";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Nav from "../../components/Nav.astro";
 import "../../styles/global.css";
 import Footer from "../../components/Footer.astro";
 import SeoHead from "../../layout/seo-head.astro";
 import Back from "../../components/Back.astro";
 
 export async function getStaticPaths() {
-    const posts = (await getCollection('articles'))
-    return posts.map((post) => ({
-        params: { slug: post.slug },
-        props: post,
-    }))
+	const posts = await getCollection("articles");
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+		props: post,
+	}));
 }
 
-type Props = CollectionEntry<'articles'>
+type Props = CollectionEntry<"articles">;
 const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 	<head>
 		<meta name="author" content="Tonie Victor" />
 		<meta name="robots" content="index, follow" />
 		<meta name="googlebot" content="index, follow" />
 		<meta name="google" content="notranslate" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-		<SeoHead title={post.data.title} description={post.data.description} image={post.data.heroImage} keywords={post.data.keywords}/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<SeoHead
+			title={post.data.title}
+			description={post.data.description}
+			image={post.data.heroImage}
+			keywords={post.data.keywords}
+		/>
 	</head>
 
 	<body>
-        <Nav/>
-        <main class="main">
-						<Back text="Back to blog" url="/blog"></Back>
-            <section>
-                <div class="top">
+		<Nav />
+		<main class="main">
+			<Back text="Back to blog" url="/blog" />
+			<section>
+				<div class="top">
 					<h1>{post.data.title}</h1>
-                    <FormattedDate date={post.data.pubDate}/>
-									</div>
-                </div>
-            </section>
-    <div class="blog"><Content/></div>
-            <div class="post_tags">
-				{post.data.tags.map((t) => 
-              <a href={`/blog/tags/${t.replace(" ", "-")}`}>#{t}</a>
-              )}
-            </div>
-        </main>
-				<Footer />
+					<FormattedDate date={post.data.pubDate} />
+				</div>
+
+				<div class="post_tags">
+					{
+						post.data.tags.map((t) => (
+							<a href={`/blog/tags/${t.replace(" ", "-")}`}>
+								#{t}
+							</a>
+						))
+					}
+				</div>
+
+				<div class="blog"><Content /></div>
+			</section>
+		</main>
+
+		<Footer />
 	</body>
 </html>

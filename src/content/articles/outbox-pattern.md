@@ -18,13 +18,13 @@ successful transaction. On the other hand, if you  send the notification first
 and then fail to persist the debit record due to a database error, you risk
 sending a notification for an operation that never occured on the system.
 
-The solution to this is the **Transactional Outbox Pattern**<sup><a href="#3">[3]</a></sup>. This approach
+A solution to this is the **Transactional Outbox Pattern**<sup><a href="#3">[3]</a></sup>. This approach
 leverages the transaction guarantees of the database by introducing a seperate
 table commonly referred to as the `outbox` table. When we perform an operation
 in the database (ie debiting an account), we also insert a corresponding event
 to the outbox table within the same transaction. By bundling both operations in
-a single transaction, we ensure that if a debit succeeds the event is recorded
-and if the debit fails, the event is not stored too.
+a single transaction, we ensure that the event is only recorded if the debit
+succeeds.
 
 After we write an event to the outbox table, we can publish it to the message
 broker to handle the notifcation, after which we delete the event from the
