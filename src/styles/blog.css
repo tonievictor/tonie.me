@@ -9,8 +9,11 @@
 	display: flex;
 	flex-direction: column;
 	gap: .5rem;
-	border-bottom: 1px solid #e5e5e520;
 	padding-bottom: 1rem;
+}
+
+.post:not(:last-child) {
+	border-bottom: 1px solid #e5e5e520;
 }
 
 .post .title {
@@ -163,7 +166,7 @@
 	height: 0;
 	margin: 2rem 0;
 	border: 0;
-	border-top: 1px solid #686868;
+	border-top: 1px solid #e5e5e520;
 }
 
 .blog sup {

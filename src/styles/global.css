@@ -48,6 +48,18 @@ a:hover {
 	filter: brightness(80%);
 }
 
+.back {
+	opacity: 0.8;
+	color: var(--highlight-color);
+	transition: ease 300ms all;
+	cursor: pointer;
+	width: max-content;
+}
+
+.back:hover {
+	opacity: 1;
+}
+
 p>a {
 	border-bottom: 1px solid;
 	text-decoration: none;

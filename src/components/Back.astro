@@ -1,21 +1,7 @@
 ---
 const { text, url } = Astro.props;
 ---
-<a 
-	class="back"
-	href={url}
->
+
+<a class="back" href={url}>
 	&#x2039; {text}
 </a>
-
-<style>
-	.back {
-		opacity: 0.8;
-		color: var(--highlight-color);
-		transition: ease 300ms all;
-	}
-
-	.back:hover {
-		opacity: 1;
-	}
-</style>

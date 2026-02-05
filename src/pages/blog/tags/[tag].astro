@@ -27,8 +27,9 @@ const posts = (
 
 <MainLayout title=`Blog | Tag: ${tag}` description="Tonie - Software Developer">
 	<Nav />
-	<Header />
+	<!-- <Header /> -->
 	<main>
+		<span class="back" id="back-button"> &#x2039; Go back </span>
 		<section>
 			<span
 				style={{
@@ -61,3 +62,10 @@ const posts = (
 		</section>
 	</main>
 </MainLayout>
+
+<script is:inline>
+	const backButton = document.getElementById("back-button");
+	backButton?.addEventListener("click", () => {
+		window.history.back();
+	});
+</script>
