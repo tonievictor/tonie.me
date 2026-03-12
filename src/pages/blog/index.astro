@@ -5,7 +5,6 @@ import FormattedDate from "../../components/FormattedDate.astro";
 import "../../styles/index.css";
 import "../../styles/blog.css";
 import Nav from "../../components/Nav.astro";
-import Header from "../../components/Header.astro";
 
 const posts = (
 	await getCollection("articles", ({ data }) => data.draft !== true)
@@ -17,7 +16,6 @@ const posts = (
 	description="Backend infrastructure, databases, distributed systems"
 >
 	<Nav />
-	<Header />
 	<main>
 		<section>
 			<h2 class="section__title">Blog</h2>

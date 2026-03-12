@@ -2,10 +2,8 @@
 import MainLayout from "../../../layout/main-layout.astro";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../../components/FormattedDate.astro";
-import "../../../styles/index.css";
 import "../../../styles/blog.css";
 import Nav from "../../../components/Nav.astro";
-import Header from "../../../components/Header.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection("articles");
@@ -27,19 +25,20 @@ const posts = (
 
 <MainLayout title=`Blog | Tag: ${tag}` description="Tonie - Software Developer">
 	<Nav />
-	<!-- <Header /> -->
 	<main>
-		<span class="back" id="back-button"> &#x2039; Go back </span>
-		<section>
-			<span
-				style={{
-					"font-style": "italic",
-					"font-size": "1rem",
-					opacity: "0.6",
-				}}
-			>
+		<div
+			style={{
+				display: "flex",
+				"flex-direction": "column",
+				"margin-bottom": "1rem",
+			}}
+		>
+			<span class="tag_info">
 				{`Showing results for tag: `}<b>{`${tag}`}</b>
 			</span>
+			<span class="back" id="back-button"> &#x2039; Go back </span>
+		</div>
+		<section>
 			<h2 class="section__title">Blog</h2>
 			<ul class="posts_container">
 				{

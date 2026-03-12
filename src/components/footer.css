@@ -2,8 +2,10 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 2rem var(--padding-x-lg) 1rem;
 	font-size: 0.9rem;
+	margin-top: 2rem;
+	padding: 1rem 0;
+	border-top: 1px solid #e5e7eb;
 }
 
 footer span {
@@ -16,17 +18,14 @@ footer button {
 	font-weight: 400;
 	font-size: .9rem;
 	cursor: pointer;
-	width: max-content;
 	display: flex;
 	align-items: flex-end;
 	gap: .3rem;
-	color: white;
+	color: black;
 	background-color: transparent;
 	text-decoration: underline;
-	font-family: "Roboto Slab", serif;
 }
 
-footer button span {}
 
 footer button:hover {
 	filter: brightness(90%);

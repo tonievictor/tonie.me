@@ -23,7 +23,7 @@ A common application of this framework is in a distributed word counter program 
 
 The `map` function in this scenario takes in a key and value (file name and file content) and records each word along with its associated count in a file. The `reduce` function takes a word and a list of the associated counts and combines it into a single value.
 
-```
+```rust
 map (filename string, filecontent string) -> {
     for each word in filecontent
         Emit(word, 1)

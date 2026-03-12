@@ -1,26 +1,28 @@
 ---
 import { Icon } from "astro-icon/components";
-import "./nav.css"
+import "./nav.css";
 ---
 
 <nav>
 	<!-- logo -->
-	<div class="logo__img" >
-		<img src="/images/profile.jpeg" alt="" loading="lazy">
+	<div class="nav__menu" id="nav_menu">
+		<a href="/" class="nav__logo">Tonie</a>
+		<a href="/blog" class="nav_link">~/blog</a>
+		<a href="/rss.xml" class="nav_link">~/rss</a>
 	</div>
 
 	<!-- socials -->
 	<div class="nav__socials">
 		<a href="https://github.com/tonievictor" target="_blank">
-			<Icon name="mdi:github" class="social_link"/>
+			<Icon name="mdi:github" class="social_link" />
 		</a>
 
 		<a href="https://twitter.com/victortonie" target="_blank">
-			<Icon name="mdi:twitter" class="social_link"/>
+			<Icon name="mdi:twitter" class="social_link" />
 		</a>
 
 		<a href="mailto:victor@tonie.me" target="_blank">
-			<Icon name="mdi:email" class="social_link"/>
+			<Icon name="mdi:email" class="social_link" />
 		</a>
 	</div>
 </nav>
