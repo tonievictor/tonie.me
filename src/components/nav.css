@@ -7,18 +7,10 @@ nav {
 	position: sticky;
 	top: 0;
 	background: white;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #e5e7eb;
 	z-index: 10;
 	backdrop-filter: blur(6px);
 }
-
-.nav__logo {
-	color: black;
-	font-size: 1.3rem;
-	font-weight: 900;
-	padding-right: 1rem;
-}
-
 
 .nav__socials {
 	display: flex;
@@ -44,12 +36,4 @@ nav {
 .nav_link {
 	font-size: 1rem;
 	line-height: 1.75;
-}
-
-
-@media screen and (max-width: 480px) {
-
-	.nav__logo {
-		padding-right: .5rem;
-	}
 }
