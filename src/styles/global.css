@@ -29,9 +29,6 @@ body {
 	color: black;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	transition-property: all;
-	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-	transition-duration: .15s;
 	max-width: 65ch;
 	flex-direction: column;
 	margin: auto;
@@ -49,8 +46,7 @@ a:hover {
 }
 
 .back {
-	opacity: 0.8;
-	color: var(--highlight-color);
+	opacity: 0.75;
 	transition: ease 300ms all;
 	cursor: pointer;
 	width: max-content;
@@ -61,8 +57,7 @@ a:hover {
 }
 
 p>a {
-	border-bottom: 1px solid;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 section {
@@ -87,31 +82,4 @@ section {
 	height: 2.5rem;
 	width: 0.2rem;
 	background-color: var(--highlight-color);
-}
-
-
-@media screen and (max-width: 480px) {
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-	}
-
-	.section__title {
-		font-size: 2.2rem;
-		gap: 0.3rem;
-		font-weight: 800;
-		display: flex;
-		align-items: center;
-	}
-
-	.section__title::before {
-		content: "";
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 2.5rem;
-		width: 0.2rem;
-		background-color: var(--highlight-color);
-	}
 }

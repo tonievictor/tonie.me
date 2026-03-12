@@ -1,7 +1,7 @@
 main {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 4rem;
 }
 
 .intro_section {
@@ -13,51 +13,68 @@ main {
 .project_container {
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
+	gap: 2rem;
 }
 
 .project {
 	display: flex;
 	flex-direction: column;
-	gap: 0.375rem;
-	align-items: baseline;
+	gap: 0.5rem;
+	align-items: flex-start;
 }
 
 .project_title {
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 1.2rem;
 	display: flex;
-	gap: 0.4rem;
 	align-items: center;
-	border-bottom: 1px solid;
+	gap: 0.5rem;
+	text-decoration: underline;
 }
 
 .project_arrow {
-	font-size: .8rem;
-	opacity: .9;
+	font-size: 0.9rem;
+	opacity: 0.7;
+	transition: transform 200ms ease;
+}
+
+.project_arrow:hover {
+	transform: translateX(2px);
 }
 
 .project p {
 	font-size: 1rem;
+	color: #1f2937;
 	width: 100%;
-	opacity: .9;
+	opacity: 0.9;
+	line-height: 1.6;
 }
 
 .project_tags {
 	display: flex;
-	align-items: flex-start;
-	gap: 0.5rem;
 	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
 }
 
 .project_tags span {
 	font-weight: 400;
-	font-size: .8rem;
-	opacity: .6;
-	/* color: white; */
-	width: max-content;
+	font-size: 0.8rem;
+	opacity: 0.6;
+	background-color: #f3f4f6;
+	padding: 0.15rem 0.4rem;
+	border-radius: 0.25rem;
+	transition: filter 200ms ease;
+	cursor: default;
 }
 
 .project_tags span:hover {
 	filter: brightness(90%);
+}
+
+
+@media screen and (max-width: 480px) {
+	main {
+		gap: 2.5rem;
+	}
 }

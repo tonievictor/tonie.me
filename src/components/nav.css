@@ -45,3 +45,11 @@ nav {
 	font-size: 1rem;
 	line-height: 1.75;
 }
+
+
+@media screen and (max-width: 480px) {
+
+	.nav__logo {
+		padding-right: .5rem;
+	}
+}

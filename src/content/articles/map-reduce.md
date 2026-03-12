@@ -40,8 +40,6 @@ reduce (word string, occurences int[]) -> {
 The `MapReduce` framework runs this computation across the various worker nodes. It uses a master node to coordinate which worker node runs a map or reduce function. It also handles potential failures within the cluster. Here's an overview of how the library works.
 ![MapReduce Execution Overview](/images/map-reduce-execution.png)
 
-## Discussions
-
 ### Fault Tolerance
 
 The implementation uses a functional approach ie it doesn't manipulate the input data files, allowing it to rerun mappers and reducers on the same data if needed. In case of failure of one or more worker nodes, it simply just re executes the computation on another idle or healthy node(s).
