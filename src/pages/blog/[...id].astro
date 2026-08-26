@@ -1,0 +1,72 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import MainLayout from "../../layout/main-layout.astro";
+import "../../styles/blog.css";
+
+export async function getStaticPaths() {
+	const posts = await getCollection("blog");
+	return posts.map((post) => ({
+		params: { id: post.id },
+		props: { post },
+	}));
+}
+
+interface Props {
+	post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const date = new Date(post.data.pubDate);
+---
+
+<MainLayout
+	title={post.data.title}
+	description={post.data.description}
+	image={post.data.heroImage}
+	keywords={post.data.keywords}
+>
+	{
+		post.data.draft && (
+			<div class="draft-banner">
+				<p>
+					<strong>Draft</strong> — You're reading a work in progress.
+					This post is still being written/edited and may change
+					substantially before it's published.
+				</p>
+			</div>
+		)
+	}
+	<article class="blog-post">
+		<section class="blog-post-title">
+			<div class="blog-post-title-metadata">
+				<time>
+					{
+						date
+							.toLocaleDateString("en-US", {
+								year: "numeric",
+								month: "short",
+								day: "numeric",
+							})
+							.replace(",", "")
+					}
+				</time>
+				<div class="blog-post-tags">
+					{
+						post.data.tags.map((tag: string, index: number) => (
+							<a href={`/blog/tags/${tag.replace(" ", "-")}`}>
+								{tag}
+								{index < post.data.tags.length - 1 && ", "}
+							</a>
+						))
+					}
+				</div>
+			</div>
+			<h1>{post.data.title}</h1>
+		</section>
+		<section class="blog-post-content">
+			<Content />
+		</section>
+	</article>
+</MainLayout>

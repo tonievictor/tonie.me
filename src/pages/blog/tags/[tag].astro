@@ -1,12 +1,11 @@
 ---
 import MainLayout from "../../../layout/main-layout.astro";
 import { getCollection } from "astro:content";
-import FormattedDate from "../../../components/FormattedDate.astro";
 import "../../../styles/blog.css";
-import Nav from "../../../components/Nav.astro";
+import Posts from "../../../components/Posts.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection("articles");
+	const posts = await getCollection("blog");
 	const tags = [...new Set(posts.map((p) => p.data.tags).flat())].filter(
 		(p) => p.length > 0,
 	);
@@ -16,55 +15,40 @@ export async function getStaticPaths() {
 }
 
 const { tag } = Astro.params;
-const posts = (
-	await getCollection("articles", ({ data }) => data.draft !== true)
-)
-	?.filter((p) => p.data.tags.includes(tag.replace("-", " ")))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<MainLayout title=`Blog | Tag: ${tag}` description="Tonie - Software Developer">
-	<Nav />
-	<main>
-		<div
-			style={{
-				display: "flex",
-				"flex-direction": "column",
-				"margin-bottom": "1rem",
-			}}
-		>
-			<span class="tag_info">
-				{`Showing results for tag: `}<b>{`${tag}`}</b>
-			</span>
-			<span class="back" id="back-button"> &#x2039; Go back </span>
-		</div>
-		<section>
-			<h2 class="section__title">Blog</h2>
-			<ul class="posts_container">
-				{
-					posts.map((post) => (
-						<>
-							<li class="post">
-								<a href={`/blog/${post.slug}/`} class="title">
-									{post.data.title}
-								</a>
-								<FormattedDate
-									date={post.data.pubDate}
-									class="time"
-								/>
-								<p>{post.data.description}</p>
-							</li>
-						</>
-					))
-				}
-			</ul>
-		</section>
-	</main>
+<MainLayout
+	title=`Blog | Tag: ${tag}`
+	description="Backend infrastructure, databases, distributed systems"
+>
+	<section class="blog-section">
+		<span>
+			{`Showing results for tag: `}<b>{`${tag}`}</b>
+		</span>
+		<Posts tag={tag} />
+	</section>
 </MainLayout>
 
-<script is:inline>
-	const backButton = document.getElementById("back-button");
-	backButton?.addEventListener("click", () => {
-		window.history.back();
-	});
-</script>
+<style>
+	.blog-section {
+		width: 100%;
+		max-width: 45rem;
+		padding-top: 5rem;
+		margin-inline: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.blog-section > span {
+		font-style: italic;
+		color: gray;
+		font-weight: 500;
+	}
+
+	@media (max-width: 750px) {
+		.blog-section {
+			padding: 3rem 1rem 0;
+		}
+	}
+</style>

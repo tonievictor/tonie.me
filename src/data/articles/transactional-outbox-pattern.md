@@ -1,10 +1,12 @@
 ---
-title: "Transactional Outbox Pattern"
-description: "The transactional outbox pattern helps ensure atomic execution of independent operations within a single system."
+title: "transactional outbox pattern"
+description: "When you transfer money from one account to another, two things happen: one
+account is debited and the other is credited. These operation must either
+succeed or both fail anything else leaves the system in an inconsistent state. This is also known as atomicity"
 pubDate: "29 September 2025"
 keywords: "atomicity transactions transactional-outbox message-broker event-processing data-integrity fault-tolerance at-least-once outbox-pattern"
 tags: ["distsys", "system design", "paper"]
-draft: false
+draft: true
 ---
 When you transfer money from one account to another, two things happen: one
 account is debited and the other is credited. These operation must either

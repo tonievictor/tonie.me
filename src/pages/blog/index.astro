@@ -1,42 +1,29 @@
 ---
+import "../../styles/global.css";
+import Posts from "../../components/Posts.astro";
 import MainLayout from "../../layout/main-layout.astro";
-import { getCollection } from "astro:content";
-import FormattedDate from "../../components/FormattedDate.astro";
-import "../../styles/index.css";
-import "../../styles/blog.css";
-import Nav from "../../components/Nav.astro";
-
-const posts = (
-	await getCollection("articles", ({ data }) => data.draft !== true)
-)?.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <MainLayout
-	title="Blog | Tonie Victor"
+	title="Blog"
 	description="Backend infrastructure, databases, distributed systems"
 >
-	<Nav />
-	<main>
-		<section>
-			<h2 class="section__title">Blog</h2>
-			<ul class="posts_container">
-				{
-					posts.map((post) => (
-						<>
-							<li class="post">
-								<a href={`/blog/${post.slug}/`} class="title">
-									{post.data.title}
-								</a>
-								<FormattedDate
-									date={post.data.pubDate}
-									class="time"
-								/>
-								<p>{post.data.description}</p>
-							</li>
-						</>
-					))
-				}
-			</ul>
-		</section>
-	</main>
+	<section class="blog-section">
+		<Posts />
+	</section>
 </MainLayout>
+
+<style>
+	.blog-section {
+		width: 100%;
+		max-width: 45rem;
+		padding-top: 5rem;
+		margin-inline: auto;
+	}
+
+	@media (max-width: 750px) {
+		.blog-section {
+			padding: 3rem 1rem 0;
+		}
+	}
+</style>

@@ -1,60 +1,36 @@
 ---
 import MainLayout from "../layout/main-layout.astro";
-import Nav from "../components/Nav.astro";
-import Back from "../components/Back.astro";
 ---
 
-<MainLayout title="Tonie | 404" description="Page not found" showfooter="false">
-	<Nav />
-	<div class="back_div">
-		<Back text="Back" url="/" />
-	</div>
-	<main>
-		<div class="notfound">
-			<h1>404</h1>
-			<p>uhm... this page doesn't exist</p>
-		</div>
-	</main>
+<MainLayout title="Tonie | 404" description="Page not found">
+	<section class="not-found-section">
+		<h1>404</h1>
+		<p>uhm... this page doesn't exist</p>
+	</section>
 </MainLayout>
 
 <style>
-	.notfound {
+	.not-found-section {
+		width: 100%;
+		max-width: 45rem;
+		margin-inline: auto;
+		flex: 1;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		flex: 4;
+		gap: 3rem;
 	}
 
-	.notfound h1 {
-		font-size: 128px;
-		font-weight: 900;
-		line-height: 198px;
-		color: white;
+	.not-found-section h1 {
+		font-size: 7rem;
 	}
 
-	.notfound p {
-		opacity: 0.7;
+	.not-found-section p {
+		color: gray;
 	}
 
-	.back_div {
-		padding: 2rem var(--padding-x-lg);
-	}
-
-	main {
-		padding: 2rem var(--padding-x-lg);
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-	}
-
-	@media screen and (max-width: 600px) {
-		.notfound h1 {
-			font-size: 5rem;
-		}
-
-		main {
-			height: calc(80vh - 10rem);
-		}
+	body {
+		min-height: 100vh;
 	}
 </style>

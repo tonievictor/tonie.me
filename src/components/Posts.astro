@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+
+interface Props {
+	limit?: number;
+	tag?: string
+}
+
+const { limit = 20, tag   } = Astro.props;
+
+let posts = (await getCollection("blog", ({ data }) => data.draft !== true))
+	?.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+
+
+if (tag) {
+	posts = posts.filter(({data}) => data.tags.includes(tag.replace("-", " ")))
+}
+
+posts = posts.slice(0, limit);
+---
+
+<div class="post-container">
+	{
+	posts.map(({ data, id }) => (
+	<a href=`/blog/${id}` class="post-item">
+				<h3>{data.title}</h3>
+				<p>{data.description}</p>
+				<time>
+					{new Date(data.pubDate)
+						.toLocaleDateString("en-US", {
+							year: "numeric",
+							month: "short",
+							day: "numeric",
+						})
+						.replace(",", "")}
+				</time>
+			</a>
+		))
+	}
+</div>
+
+<style>
+	.post-container {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+	}
+
+	.post-item {
+		text-decoration: none;
+		color: black;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.post-item h3 {
+		font-size: 1.7rem;
+		font-weight: 600;
+	}
+
+	.post-item time {
+		font-size: 14px;
+		font-weight: 500;
+		color: gray;
+	}
+</style>

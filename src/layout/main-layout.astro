@@ -1,41 +1,73 @@
 ---
-import "../styles/global.css";
 import Footer from "../components/Footer.astro";
-import SeoHead from "./seo-head.astro";
+import Nav from "../components/Nav.astro";
+import "../styles/global.css";
 
 type Props = {
 	title: string;
 	description: string;
 	image?: string;
 	keywords?: string;
-	showfooter?: string;
 };
-let { title, description, image, keywords, showfooter } = Astro.props as Props;
-if (!showfooter) showfooter = "true";
+let { title, description, image, keywords } = Astro.props as Props;
 if (!keywords)
 	keywords =
 		"tonie, victor, developer, software, engineer, nwanochi, chisom, python, c, typescript, golang, nodejs, gleam, rust, backend";
+
+if (!image) image = "/images/profile.jpeg";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="en">
 	<head>
 		<meta name="robots" content="index, follow" />
 		<meta name="googlebot" content="index, follow" />
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
 			rel="stylesheet"
 		/>
-		<SeoHead
-			title={title}
-			description={description}
-			image={image}
-			keywords={keywords}
-		/>
+
+		<meta name="generator" content={Astro.generator} />
+		<meta name="title" content={title} />
+		<meta name="author" content="Tonie Victor" />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Language" content="en" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="google" content="notranslate" />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- OpenGraph/Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary" />
+		<!-- Use this for larger image rendering -->
+		<!-- <meta property="twitter:card" content="summary_large_image" /> -->
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+		<meta name="twitter:site" content="@victortonie" />
+		<meta name="twitter:creator" content="@victortonie" />
+
+		<title>{title}</title>
 	</head>
 	<body>
+		<Nav />
 		<slot />
-		{showfooter == "true" && <Footer />}
+		<Footer />
 	</body>
 </html>

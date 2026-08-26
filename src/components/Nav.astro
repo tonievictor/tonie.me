@@ -1,27 +1,70 @@
----
-import { Icon } from "astro-icon/components";
-import "./nav.css";
----
+<nav class="">
+	<div class="nav-content">
+		<ul>
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/blog">Blog</a>
+			</li>
+			<li>
+				<a href="/rss.xml">RSS</a>
+			</li>
+		</ul>
 
-<nav>
-	<!-- logo -->
-	<div class="nav__menu" id="nav_menu">
-		<a href="/" class="nav_link">~/home</a>
-		<a href="/blog" class="nav_link">~/blog</a>
-		<a href="/rss.xml" class="nav_link">~/rss</a>
-	</div>
-
-	<!-- socials -->
-	<div class="nav__socials">
-		<a href="https://github.com/tonievictor" target="_blank">
-			<Icon name="mdi:github" class="social_link" />
-		</a>
-
-		<a href="https://twitter.com/victortonie" target="_blank">
-			<Icon name="mdi:twitter" class="social_link" />
-		</a>
-		<a href="mailto:hello@tonie.me" target="_blank">
-			<Icon name="mdi:email" class="social_link" />
-		</a>
+		<ul>
+			<li>
+				<a href="https://github.com/tonievictor" target="_blank"
+					>Github</a
+				>
+			</li>
+			<li>
+				<a
+					href="https://www.linkedin.com/in/tonievictor"
+					target="_blank">LinkedIn</a
+				>
+			</li>
+		</ul>
 	</div>
 </nav>
+
+<style>
+	nav {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-transform: uppercase;
+		font-size: 14px;
+		font-weight: 500;
+		color: black;
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	nav a {
+		text-decoration: none;
+		color: black;
+	}
+
+	.nav-content {
+		width: 100%;
+		max-width: 45rem;
+		padding: 1rem 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		align-items: baseline;
+		gap: 1rem;
+	}
+
+	@media (max-width: 750px) {
+		.nav-content {
+			padding: 1rem;
+		}
+	}
+</style>

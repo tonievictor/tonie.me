@@ -1,5 +1,5 @@
 ---
-title: Hello
+title: hello
 description: An introduction.
 pubDate: 19 April 2024
 keywords: 'hello world, blog, welcome, software'
